@@ -1,0 +1,234 @@
+import { LitElement, html, css } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
+import '../ct-icon';
+
+export interface SelectOption {
+  label: string;
+  value: string;
+}
+
+/**
+ * A custom Select/Dropdown component.
+ */
+@customElement('ct-select')
+export class CtSelect extends LitElement {
+  @property({ type: String }) label = '';
+  @property({ type: String }) value = '';
+  @property({ type: Array }) options: SelectOption[] = [];
+  @property({ type: String }) error = '';
+  @property({ type: Boolean }) disabled = false;
+
+  @state() private _open = false;
+
+  static styles = css`
+    :host {
+      display: block;
+      font-family: var(--ct-font-family, 'Montserrat', sans-serif);
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .select-container {
+      position: relative;
+      background: var(--ct-surface, #1E1E1E);
+      backdrop-filter: var(--ct-surface-blur, blur(24px));
+      -webkit-backdrop-filter: var(--ct-surface-blur, blur(24px));
+      border: 1px solid var(--ct-border-color, #333333);
+      border-radius: var(--ct-radius-md, 8px);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      min-height: 56px;
+    }
+
+    .select-container:hover:not(.disabled) {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .select-container.open {
+      border-color: var(--ct-color-primary, #00E5FF);
+      box-shadow: 0 0 0 1px var(--ct-color-primary, #00E5FF), 0 0 8px rgba(0, 229, 255, 0.2);
+    }
+
+    .select-container.error {
+      border-color: var(--ct-color-error, #F44336);
+    }
+
+    .select-container.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .value-display {
+      width: 100%;
+      color: #FFFFFF;
+      font-size: 16px;
+      padding: 24px 48px 8px 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .label {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      color: var(--ct-text-secondary, #B3B3B3);
+      font-size: 16px;
+      pointer-events: none;
+      transition: all 0.2s ease;
+      transform-origin: left top;
+    }
+
+    .select-container.open .label,
+    .select-container.has-value .label {
+      transform: translateY(-10px) scale(0.75);
+      color: var(--ct-color-primary, #00E5FF);
+    }
+
+    .select-container:not(.open).has-value .label {
+      color: var(--ct-text-secondary, #B3B3B3);
+    }
+
+    .chevron {
+      position: absolute;
+      right: 16px;
+      color: var(--ct-text-secondary, #B3B3B3);
+      transition: transform 0.3s ease;
+    }
+
+    .select-container.open .chevron {
+      transform: rotate(180deg);
+      color: var(--ct-color-primary, #00E5FF);
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: var(--ct-surface, #1E1E1E);
+      backdrop-filter: var(--ct-surface-blur, blur(24px));
+      -webkit-backdrop-filter: var(--ct-surface-blur, blur(24px));
+      border: 1px solid var(--ct-border-color, #333333);
+      border-radius: var(--ct-radius-md, 8px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      max-height: 250px;
+      overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dropdown.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .option {
+      padding: 12px 16px;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .option:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .option.selected {
+      background: color-mix(in srgb, var(--ct-color-primary) 10%, transparent);
+      color: var(--ct-color-primary);
+    }
+
+    .error-message {
+      color: var(--ct-color-error, #F44336);
+      font-size: 12px;
+      margin-top: 4px;
+      margin-left: 4px;
+    }
+
+    /* Backdrop for closing when clicking outside */
+    .click-away {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+    }
+    
+    .click-away.open {
+      display: block;
+    }
+  `;
+
+  private _toggleOpen() {
+    if (!this.disabled) {
+      this._open = !this._open;
+    }
+  }
+
+  private _close() {
+    this._open = false;
+  }
+
+  private _handleSelect(value: string) {
+    this.value = value;
+    this._open = false;
+    this.dispatchEvent(new CustomEvent('ct-change', {
+      detail: { value },
+      bubbles: true,
+      composed: true
+    }));
+  }
+
+  render() {
+    const selectedOption = this.options.find(opt => opt.value === this.value);
+    const displayLabel = selectedOption ? selectedOption.label : '';
+    const hasValue = !!this.value;
+
+    const containerClasses = [
+      'select-container',
+      this._open ? 'open' : '',
+      hasValue ? 'has-value' : '',
+      this.error ? 'error' : '',
+      this.disabled ? 'disabled' : ''
+    ].join(' ');
+
+    return html`
+      <div class="click-away ${this._open ? 'open' : ''}" @click=${this._close}></div>
+      <div class="${containerClasses}" @click=${this._toggleOpen} part="container">
+        <label class="label" part="label">${this.label}</label>
+        <div class="value-display" part="value">${displayLabel}</div>
+        <div class="chevron">
+          <ct-icon name="expand_more" size="20px" color="currentColor"></ct-icon>
+        </div>
+      </div>
+      
+      <div class="dropdown ${this._open ? 'open' : ''}" part="dropdown">
+        ${this.options.map(opt => html`
+          <div 
+            class="option ${this.value === opt.value ? 'selected' : ''}" 
+            @click=${() => this._handleSelect(opt.value)}
+            part="option"
+          >
+            ${opt.label}
+          </div>
+        `)}
+        ${this.options.length === 0 ? html`<div class="option" style="color: #757575;">Nenhuma opção</div>` : ''}
+      </div>
+      
+      ${this.error ? html`<div class="error-message" part="error">${this.error}</div>` : ''}
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'ct-select': CtSelect;
+  }
+}

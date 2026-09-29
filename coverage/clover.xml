@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1790660221490" clover="3.2.0">
+  <project timestamp="1790660221490" name="All files">
+    <metrics statements="159" coveredstatements="158" conditionals="92" coveredconditionals="76" methods="39" coveredmethods="39" elements="290" coveredelements="273" complexity="0" loc="159" ncloc="159" packages="13" files="15" classes="15"/>
+    <package name="ct-alert">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="ct-alert.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-alert\ct-alert.ts">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="109" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-badge">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ct-badge.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-badge\ct-badge.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-button">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ct-button.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-button\ct-button.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-card">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="ct-card.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-card\ct-card.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-currency-input">
+      <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="6"/>
+      <file name="ct-currency-input.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-currency-input\ct-currency-input.ts">
+        <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="13" methods="6" coveredmethods="6"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="42" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="48" count="8" type="cond" truecount="4" falsecount="0"/>
+        <line num="49" count="4" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="62" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="75" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-drawer">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <file name="ct-drawer.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-drawer\ct-drawer.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="105" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="110" count="1" type="stmt"/>
+        <line num="111" count="1" type="stmt"/>
+        <line num="115" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-icon">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="ct-icon.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-icon\ct-icon.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="24" type="stmt"/>
+        <line num="10" count="24" type="stmt"/>
+        <line num="11" count="24" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="42" count="24" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-icon\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="ct-input">
+      <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
+      <file name="ct-input.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-input\ct-input.ts">
+        <metrics statements="17" coveredstatements="17" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="118" count="1" type="stmt"/>
+        <line num="126" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="127" count="15" type="stmt"/>
+        <line num="135" count="15" type="stmt"/>
+      </file>
+      <file name="index.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-input\index.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="ct-modal">
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="ct-modal.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-modal\ct-modal.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="119" count="4" type="cond" truecount="4" falsecount="0"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="125" count="2" type="stmt"/>
+        <line num="126" count="2" type="stmt"/>
+        <line num="130" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-select">
+      <metrics statements="22" coveredstatements="22" conditionals="22" coveredconditionals="20" methods="7" coveredmethods="7"/>
+      <file name="ct-select.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-select\ct-select.ts">
+        <metrics statements="22" coveredstatements="22" conditionals="22" coveredconditionals="20" methods="7" coveredmethods="7"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="170" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="171" count="3" type="stmt"/>
+        <line num="176" count="1" type="stmt"/>
+        <line num="180" count="1" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
+        <line num="182" count="1" type="stmt"/>
+        <line num="190" count="11" type="stmt"/>
+        <line num="191" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="192" count="11" type="stmt"/>
+        <line num="194" count="11" type="stmt"/>
+        <line num="202" count="11" type="stmt"/>
+        <line num="213" count="6" type="stmt"/>
+        <line num="216" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-sidebar">
+      <metrics statements="18" coveredstatements="17" conditionals="18" coveredconditionals="9" methods="7" coveredmethods="7"/>
+      <file name="ct-sidebar.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-sidebar\ct-sidebar.ts">
+        <metrics statements="18" coveredstatements="17" conditionals="18" coveredconditionals="9" methods="7" coveredmethods="7"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="18" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="148" count="1" type="stmt"/>
+        <line num="154" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="160" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="161" count="1" type="stmt"/>
+        <line num="166" count="8" type="stmt"/>
+        <line num="179" count="7" type="stmt"/>
+        <line num="180" count="1" type="stmt"/>
+        <line num="193" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="194" count="4" type="stmt"/>
+        <line num="206" count="4" type="stmt"/>
+        <line num="209" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-transaction-item">
+      <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <file name="ct-transaction-item.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-transaction-item\ct-transaction-item.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="10" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="15" count="5" type="stmt"/>
+        <line num="16" count="5" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="110" count="5" type="stmt"/>
+        <line num="115" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="119" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="ct-typography">
+      <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="ct-typography.ts" path="C:\Users\renat\.gemini\antigravity-ide\scratch\cashtrack-ui\src\components\ct-typography\ct-typography.ts">
+        <metrics statements="11" coveredstatements="11" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="78" count="5" type="cond" truecount="4" falsecount="0"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
