@@ -1,7 +1,6 @@
 {
   "name": "cashtrack-ui",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -12,15 +11,20 @@
       "require": "./dist/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "release": "npm run build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.3",
     "@chromatic-com/storybook": "latest",
     "@open-wc/testing": "^5.0.0",
     "@storybook/addon-a11y": "^10.6.0",
