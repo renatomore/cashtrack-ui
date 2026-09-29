@@ -79,18 +79,54 @@ export class CtButton extends LitElement {
       box-shadow: 0 2px 4px rgba(0, 229, 255, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
+    /* Secondary Variant (Pure Glassmorphism) */
     .variant-secondary {
-      background: rgba(255, 215, 0, 0.05);
-      color: var(--ct-color-secondary, #FFD700);
-      border: 1px solid var(--ct-color-secondary, #FFD700);
-      box-shadow: 0 0 8px rgba(255, 215, 0, 0.1), inset 0 0 8px rgba(255, 215, 0, 0.05);
+      background: rgba(255, 255, 255, 0.05);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .variant-secondary:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
     }
 
-    .variant-secondary:hover:not(:disabled) {
-      background: rgba(255, 215, 0, 0.1);
-      box-shadow: 0 0 12px rgba(255, 215, 0, 0.2), inset 0 0 12px rgba(255, 215, 0, 0.1);
-      text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+    /* Tonal Variant (Muted Primary Glass) */
+    .variant-tonal {
+      background: rgba(0, 229, 255, 0.15);
+      color: var(--ct-color-primary, #00E5FF);
+    }
+    .variant-tonal:hover:not(:disabled) {
+      background: rgba(0, 229, 255, 0.25);
       transform: translateY(-1px);
+    }
+
+    /* Neon Variant (Cyber Neon Glow) */
+    .variant-neon {
+      background: transparent;
+      color: var(--ct-color-primary, #00E5FF);
+      border: 1px solid var(--ct-color-primary, #00E5FF);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1);
+      text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+    }
+    .variant-neon:hover:not(:disabled) {
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2);
+      background: rgba(0, 229, 255, 0.05);
+      transform: translateY(-1px);
+    }
+
+    /* Neumorph Variant (Dark Neumorphism) */
+    .variant-neumorph {
+      background: #1E1E1E;
+      color: #FFFFFF;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6), -2px -2px 8px rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .variant-neumorph:hover:not(:disabled) {
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(255, 255, 255, 0.02);
+      transform: translateY(1px);
     }
 
     .variant-outline {
@@ -104,6 +140,17 @@ export class CtButton extends LitElement {
       background-color: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-1px);
+    }
+
+    .variant-text {
+      background-color: transparent;
+      color: var(--ct-text-primary, #FFFFFF);
+      padding: 8px; /* Override sizes for icon/text balance */
+      min-width: 40px;
+    }
+
+    .variant-text:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.08);
     }
   `;
 
