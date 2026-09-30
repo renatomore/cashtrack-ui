@@ -17,7 +17,29 @@ export interface SidebarItem {
  */
 @customElement('ct-sidebar')
 export class CtSidebar extends LitElement {
-  @property({ type: Array }) items: SidebarItem[] = [];
+  private _items: SidebarItem[] = [];
+
+  @property({ type: Array })
+  get items(): SidebarItem[] {
+    return this._items;
+  }
+
+  set items(val: any) {
+    const oldVal = this._items;
+    if (typeof val === 'string') {
+      try {
+        this._items = JSON.parse(val);
+      } catch (e) {
+        this._items = [];
+      }
+    } else if (Array.isArray(val)) {
+      this._items = val;
+    } else {
+      this._items = [];
+    }
+    this.requestUpdate('items', oldVal);
+  }
+
   @property({ type: String }) logo = 'CashTrack';
   
   /**
@@ -204,7 +226,7 @@ export class CtSidebar extends LitElement {
         </div>
         
         <nav class="nav">
-          ${this.items.map(item => {
+          ${(this.items || []).map(item => {
             if (item.isSeparator) {
               return html`<div class="separator">${item.label}</div>`;
             }
