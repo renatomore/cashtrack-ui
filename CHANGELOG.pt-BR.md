@@ -5,6 +5,11 @@ Todas as alterações notáveis a este projeto serão documentadas neste arquivo
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.3.1] - 2026-09-30
+
+### Corrigido
+- Componente `ct-sidebar` não sofre mais crashes ou erros de map quando a propriedade `items` recebe valores em string ou primitivos, graças a um parser inteligente e estrito de array.
+
 ## [0.3.0] - 2026-09-30
 
 ### Adicionado

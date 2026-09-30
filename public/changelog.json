@@ -1,6 +1,15 @@
 {
   "en": [
     {
+      "version": "0.3.1",
+      "date": "2026-09-30",
+      "changes": {
+        "Fixed": [
+          "`ct-sidebar` component no longer crashes or throws map errors when the `items` property receives stringified values or primitives, thanks to a smart and strict array parser."
+        ]
+      }
+    },
+    {
       "version": "0.3.0",
       "date": "2026-09-30",
       "changes": {
@@ -59,6 +68,15 @@
     }
   ],
   "pt-BR": [
+    {
+      "version": "0.3.1",
+      "date": "2026-09-30",
+      "changes": {
+        "Corrigido": [
+          "Componente `ct-sidebar` não sofre mais crashes ou erros de map quando a propriedade `items` recebe valores em string ou primitivos, graças a um parser inteligente e estrito de array."
+        ]
+      }
+    },
     {
       "version": "0.3.0",
       "date": "2026-09-30",
