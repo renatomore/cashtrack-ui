@@ -69,11 +69,13 @@ try {
   const outputPath = path.join(rootDir, 'changelog.json');
   fs.writeFileSync(outputPath, JSON.stringify(result, null, 2));
   
-  // Opcional: copiar também para a pasta public para ser consumido pelo frontend no Showcase
-  const publicPath = path.join(rootDir, 'public', 'changelog.json');
-  if (fs.existsSync(path.join(rootDir, 'public'))) {
-    fs.writeFileSync(publicPath, JSON.stringify(result, null, 2));
+  // Copiar também para a pasta public para ser consumido pelo frontend no Showcase
+  const publicDir = path.join(rootDir, 'public');
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
   }
+  const publicPath = path.join(publicDir, 'changelog.json');
+  fs.writeFileSync(publicPath, JSON.stringify(result, null, 2));
 
   console.log('✅ changelog.json gerado com sucesso!');
 } catch (err) {
