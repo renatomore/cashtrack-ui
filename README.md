@@ -12,27 +12,27 @@ A tipografia padrão do projeto utiliza **Montserrat**. Toda a interface suporta
 
 1. Instale o pacote no seu projeto consumidor (quando publicado) ou instale localmente apontando para este repositório:
 
-\`\`\`bash
+```bash
 npm install cashtrack-ui
-\`\`\`
+```
 
 2. Importe o CSS Global e registre os Web Components no arquivo principal do seu App (ex: `main.ts` ou `App.tsx`):
 
-\`\`\`javascript
+```javascript
 // Importa o arquivo base de Design Tokens e Reset
 import 'cashtrack-ui/dist/style.css';
 
 // Importa os Web Components (todos)
 import 'cashtrack-ui';
-\`\`\`
+```
 
 3. Certifique-se de importar a fonte Montserrat no seu `index.html`:
 
-\`\`\`html
+```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-\`\`\`
+```
 
 ---
 
@@ -43,41 +43,41 @@ Utilizado para padronizar todos os textos e hierarquias da aplicação.
 - **`variant`**: `h1` | `h2` | `h3` | `body1` | `body2` | `caption`
 - **`color`**: String (CSS Color)
 
-\`\`\`html
+```html
 <ct-typography variant="h1">Visão Geral</ct-typography>
 <ct-typography variant="body1" color="var(--text-secondary)">
   Acompanhe seus rendimentos e gastos.
 </ct-typography>
-\`\`\`
+```
 
 ### Button (`<ct-button>`)
 Botão primário para interações e submissão de formulários.
 - **`variant`**: `primary` | `secondary` | `outline` 
 - **`disabled`**: Boolean
 
-\`\`\`html
+```html
 <ct-button variant="primary">Adicionar Transação</ct-button>
 <ct-button variant="outline" disabled>Ação Indisponível</ct-button>
-\`\`\`
+```
 
 ### Badge (`<ct-badge>`)
 Pequenas tags de identificação ou status.
 - **`variant`**: `success` | `error` | `warning` | `info` | `default`
 
-\`\`\`html
+```html
 <ct-badge variant="success">+ Receita</ct-badge>
 <ct-badge variant="error">- Despesa</ct-badge>
-\`\`\`
+```
 
 ### Card (`<ct-card>`)
 Container de layout flutuante para resumos e gráficos. O Card encapsula o conteúdo no Slot e aplica sombras/cores do tema.
 
-\`\`\`html
+```html
 <ct-card>
   <ct-typography variant="h3">Saldo Atual</ct-typography>
   <ct-typography variant="h2" color="#4CAF50">R$ 15.300,00</ct-typography>
 </ct-card>
-\`\`\`
+```
 
 ### Input (`<ct-input>`)
 Campo de entrada de texto padronizado flutuante.
@@ -88,12 +88,12 @@ Campo de entrada de texto padronizado flutuante.
 - **`disabled`**: Boolean
 - **Eventos**: `@ct-change`
 
-\`\`\`html
+```html
 <ct-input 
   label="Nome da Transação" 
   value="Supermercado">
 </ct-input>
-\`\`\`
+```
 
 ### Currency Input (`<ct-currency-input>`)
 Campo especializado que força o usuário a digitar apenas valores monetários. Formata visualmente para `BRL (R$)` enquanto repassa eventos `@ct-change` com valores `Number` limpos.
@@ -103,9 +103,9 @@ Campo especializado que força o usuário a digitar apenas valores monetários. 
 - **`disabled`**: Boolean
 - **Eventos**: `@ct-change`
 
-\`\`\`html
+```html
 <ct-currency-input label="Valor (R$)" value="1250.50"></ct-currency-input>
-\`\`\`
+```
 
 ### Select (`<ct-select>`)
 Dropdown customizado de seleção de opções.
@@ -114,10 +114,10 @@ Dropdown customizado de seleção de opções.
 - **`options`**: Array<{ label: String, value: String }>
 - **Eventos**: `@ct-change`
 
-\`\`\`html
+```html
 <!-- (Lembre-se que em frameworks como React/Lit você pode passar objetos complexos via propriedades .options) -->
 <ct-select label="Categoria" value="food"></ct-select>
-\`\`\`
+```
 
 ### Icon (`<ct-icon>`)
 Componente para carregar SVGs.
@@ -125,9 +125,9 @@ Componente para carregar SVGs.
 - **`size`**: String
 - **`color`**: String
 
-\`\`\`html
+```html
 <ct-icon name="dashboard" size="24px" color="#00E5FF"></ct-icon>
-\`\`\`
+```
 
 ---
 
@@ -140,14 +140,14 @@ Pop-up fixado no centro da tela e contendo backdrop de blur.
 - **Eventos**: `@ct-close`
 - **Slots**: `title`, `(default)`, `footer`
 
-\`\`\`html
+```html
 <ct-modal open>
   <span slot="title">Confirmar Ação</span>
   <p>Tem certeza que deseja excluir esta transação?</p>
   <ct-button slot="footer" variant="outline">Cancelar</ct-button>
   <ct-button slot="footer" variant="primary">Excluir</ct-button>
 </ct-modal>
-\`\`\`
+```
 
 ### Drawer (`<ct-drawer>`)
 Painel lateral que desliza sobre o conteúdo para ações em contexto.
@@ -155,11 +155,11 @@ Painel lateral que desliza sobre o conteúdo para ações em contexto.
 - **`position`**: `left` | `right`
 - **Eventos**: `@ct-close`
 
-\`\`\`html
+```html
 <ct-drawer open position="right">
   <h2>Filtros</h2>
 </ct-drawer>
-\`\`\`
+```
 
 ### Alert (`<ct-alert>`)
 Toasts ou Notificações de rodapé.
@@ -169,11 +169,11 @@ Toasts ou Notificações de rodapé.
 - **Eventos**: `@ct-close`
 - **Slots**: `(default)`
 
-\`\`\`html
+```html
 <ct-alert variant="success" open position="right">
   Transação salva com sucesso!
 </ct-alert>
-\`\`\`
+```
 
 ---
 
@@ -192,11 +192,11 @@ Bloco visual para renderizar um evento transacional do CashTrack.
 - **`date`**: String
 - **Slots**: `(default / título)`
 
-\`\`\`html
+```html
 <ct-transaction-item type="expense" amount="150.75" category="Alimentação" date="12 Out 2026">
   Supermercado
 </ct-transaction-item>
-\`\`\`
+```
 
 ---
 
