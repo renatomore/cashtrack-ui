@@ -1,6 +1,6 @@
 {
   "name": "cashtrack-ui",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -16,12 +16,15 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "generate:changelog": "node scripts/generate-changelog.js",
+    "build": "npm run generate:changelog && tsc && vite build",
+    "build-showcase": "npm run generate:changelog && vite build --config vite.showcase.config.ts",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "vitest run --coverage",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3",
@@ -33,6 +36,7 @@
     "@storybook/web-components-vite": "^10.6.0",
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
+    "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "playwright": "latest",
     "storybook": "^10.6.0",
