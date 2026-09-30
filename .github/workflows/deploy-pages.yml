@@ -38,7 +38,7 @@ jobs:
         run: npm run build-showcase
 
       - name: Build Storybook
-        run: npm run build-storybook -- -o dist-showcase/storybook
+        run: npx storybook build -o dist-showcase/storybook
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
