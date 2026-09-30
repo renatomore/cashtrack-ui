@@ -28,7 +28,9 @@ export class CtSidebar extends LitElement {
     const oldVal = this._items;
     if (typeof val === 'string') {
       try {
-        this._items = JSON.parse(val);
+        const parsed = JSON.parse(val);
+        // Sometimes JSON.parse of a string returns a string or primitive. We strictly need an array.
+        this._items = Array.isArray(parsed) ? parsed : [];
       } catch (e) {
         this._items = [];
       }
