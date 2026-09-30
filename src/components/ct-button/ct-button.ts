@@ -63,7 +63,7 @@ export class CtButton extends LitElement {
     /* Variants */
     .variant-primary {
       background: linear-gradient(180deg, var(--ct-color-primary, #00E5FF) 0%, var(--ct-color-primary-hover, #00B8D4) 100%);
-      color: #FFFFFF;
+      color: #FFFFFF; /* Keep white for primary since it has a solid colorful background */
       box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
@@ -81,15 +81,15 @@ export class CtButton extends LitElement {
 
     /* Secondary Variant (Pure Glassmorphism) */
     .variant-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--ct-overlay-hover);
+      color: var(--ct-text-primary);
+      border: 1px solid var(--ct-border-color);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
     .variant-secondary:hover:not(:disabled) {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: var(--ct-overlay-active);
+      border-color: var(--ct-color-primary);
       transform: translateY(-1px);
     }
 
@@ -119,38 +119,40 @@ export class CtButton extends LitElement {
 
     /* Neumorph Variant (Dark Neumorphism) */
     .variant-neumorph {
-      background: #1E1E1E;
-      color: #FFFFFF;
-      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6), -2px -2px 8px rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255,255,255,0.02);
+      background: var(--ct-surface);
+      color: var(--ct-text-primary);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2), -2px -2px 8px var(--ct-overlay-hover);
+      border: 1px solid var(--ct-border-color);
+      backdrop-filter: var(--ct-surface-blur);
+      -webkit-backdrop-filter: var(--ct-surface-blur);
     }
     .variant-neumorph:hover:not(:disabled) {
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(255, 255, 255, 0.02);
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3), -1px -1px 4px var(--ct-overlay-hover);
       transform: translateY(1px);
     }
 
     .variant-outline {
       background-color: transparent;
-      color: var(--ct-text-primary, #FFFFFF);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      color: var(--ct-text-primary);
+      border: 1px solid var(--ct-border-color);
+      box-shadow: inset 0 1px 0 var(--ct-overlay-hover);
     }
 
     .variant-outline:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.3);
+      background-color: var(--ct-overlay-hover);
+      border-color: var(--ct-color-primary);
       transform: translateY(-1px);
     }
 
     .variant-text {
       background-color: transparent;
-      color: var(--ct-text-primary, #FFFFFF);
+      color: var(--ct-text-primary);
       padding: 8px; /* Override sizes for icon/text balance */
       min-width: 40px;
     }
 
     .variant-text:hover:not(:disabled) {
-      background-color: rgba(255, 255, 255, 0.08);
+      background-color: var(--ct-overlay-hover);
     }
   `;
 

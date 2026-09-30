@@ -22,7 +22,7 @@ export class CtModal extends LitElement {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: var(--ct-backdrop, rgba(0, 0, 0, 0.7));
       backdrop-filter: blur(6px);
       z-index: 1000;
       opacity: 0;
@@ -42,12 +42,12 @@ export class CtModal extends LitElement {
       background: var(--ct-surface, #1E1E1E);
       backdrop-filter: var(--ct-surface-blur, blur(24px));
       -webkit-backdrop-filter: var(--ct-surface-blur, blur(24px));
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--ct-border-color);
       border-radius: var(--ct-radius-lg, 16px);
       width: 90%;
       max-width: 500px;
       max-height: 90vh;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--ct-overlay-hover);
       transform: scale(0.95) translateY(20px);
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -72,25 +72,25 @@ export class CtModal extends LitElement {
       font-family: var(--ct-font-family, 'Montserrat', sans-serif);
       font-size: 20px;
       font-weight: 600;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       margin: 0;
     }
 
     .close-btn {
       background: none;
       border: none;
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--ct-text-secondary);
       cursor: pointer;
       padding: 8px;
       margin: -8px;
       display: flex;
-      transition: color 0.2s;
+      transition: color 0.2s, background 0.2s;
       border-radius: 4px;
     }
 
     .close-btn:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.05);
+      color: var(--ct-text-primary);
+      background: var(--ct-overlay-hover);
     }
 
     .content {
@@ -108,7 +108,7 @@ export class CtModal extends LitElement {
       display: flex;
       justify-content: flex-end;
       gap: 12px;
-      background: rgba(0, 0, 0, 0.2);
+      background: var(--ct-overlay-hover);
       border-bottom-left-radius: 16px;
       border-bottom-right-radius: 16px;
     }

@@ -5,6 +5,8 @@ import '../ct-icon';
 export interface SelectOption {
   label: string;
   value: string;
+  icon?: string;
+  image?: string;
 }
 
 /**
@@ -43,7 +45,7 @@ export class CtSelect extends LitElement {
     }
 
     .select-container:hover:not(.disabled) {
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: var(--ct-text-secondary);
     }
 
     .select-container.open {
@@ -62,12 +64,16 @@ export class CtSelect extends LitElement {
 
     .value-display {
       width: 100%;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       font-size: 16px;
       padding: 24px 48px 8px 16px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .select-container:not(.has-label) .value-display {
+      padding: 16px 48px 16px 16px;
     }
 
     .label {
@@ -114,7 +120,7 @@ export class CtSelect extends LitElement {
       -webkit-backdrop-filter: var(--ct-surface-blur, blur(24px));
       border: 1px solid var(--ct-border-color, #333333);
       border-radius: var(--ct-radius-md, 8px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       z-index: 1000;
       max-height: 250px;
       overflow-y: auto;
@@ -132,18 +138,42 @@ export class CtSelect extends LitElement {
 
     .option {
       padding: 12px 16px;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       cursor: pointer;
       transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .option:hover {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--ct-overlay-hover);
     }
 
     .option.selected {
       background: color-mix(in srgb, var(--ct-color-primary) 10%, transparent);
       color: var(--ct-color-primary);
+    }
+
+    .option-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+    }
+
+    .option-image {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .value-inner {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .error-message {
@@ -186,9 +216,18 @@ export class CtSelect extends LitElement {
     }));
   }
 
+  private _renderOptionMedia(opt: SelectOption) {
+    if (opt.image) {
+      return html`<img src="${opt.image}" alt="" class="option-image" />`;
+    }
+    if (opt.icon) {
+      return html`<ct-icon name="${opt.icon}" size="20px" color="currentColor" class="option-icon"></ct-icon>`;
+    }
+    return '';
+  }
+
   render() {
     const selectedOption = this.options.find(opt => opt.value === this.value);
-    const displayLabel = selectedOption ? selectedOption.label : '';
     const hasValue = !!this.value;
 
     const containerClasses = [
@@ -196,14 +235,22 @@ export class CtSelect extends LitElement {
       this._open ? 'open' : '',
       hasValue ? 'has-value' : '',
       this.error ? 'error' : '',
-      this.disabled ? 'disabled' : ''
+      this.disabled ? 'disabled' : '',
+      this.label ? 'has-label' : ''
     ].join(' ');
 
     return html`
       <div class="click-away ${this._open ? 'open' : ''}" @click=${this._close}></div>
       <div class="${containerClasses}" @click=${this._toggleOpen} part="container">
         <label class="label" part="label">${this.label}</label>
-        <div class="value-display" part="value">${displayLabel}</div>
+        <div class="value-display" part="value">
+          ${selectedOption ? html`
+            <div class="value-inner">
+              ${this._renderOptionMedia(selectedOption)}
+              <span>${selectedOption.label}</span>
+            </div>
+          ` : ''}
+        </div>
         <div class="chevron">
           <ct-icon name="expand_more" size="20px" color="currentColor"></ct-icon>
         </div>
@@ -216,7 +263,8 @@ export class CtSelect extends LitElement {
             @click=${() => this._handleSelect(opt.value)}
             part="option"
           >
-            ${opt.label}
+            ${this._renderOptionMedia(opt)}
+            <span>${opt.label}</span>
           </div>
         `)}
         ${this.options.length === 0 ? html`<div class="option" style="color: #757575;">Nenhuma opção</div>` : ''}
