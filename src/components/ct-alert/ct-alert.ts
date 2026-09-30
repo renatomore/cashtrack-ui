@@ -58,11 +58,12 @@ export class CtAlert extends LitElement {
       font-family: var(--ct-font-family, 'Montserrat', sans-serif);
       font-weight: 500;
       font-size: 14px;
-      color: #FFFFFF;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      color: var(--ct-text-primary);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
       background: var(--ct-surface, #1E1E1E);
       backdrop-filter: var(--ct-surface-blur, blur(24px));
       -webkit-backdrop-filter: var(--ct-surface-blur, blur(24px));
+      border: 1px solid var(--ct-border-color);
       border-left: 4px solid transparent;
     }
 
@@ -85,18 +86,20 @@ export class CtAlert extends LitElement {
     .close-btn {
       background: none;
       border: none;
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--ct-text-secondary);
       cursor: pointer;
-      padding: 0;
+      padding: 4px;
       margin-left: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: color 0.2s;
+      transition: color 0.2s, background 0.2s;
+      border-radius: 4px;
     }
 
     .close-btn:hover {
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
+      background: var(--ct-overlay-hover);
     }
   `;
 

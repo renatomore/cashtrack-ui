@@ -34,20 +34,20 @@ export class CtTransactionItem extends LitElement {
     }
 
     .row:hover {
-      background: rgba(255, 255, 255, 0.02);
+      background: var(--ct-overlay-hover);
     }
 
     .icon-box {
       width: 40px;
       height: 40px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--ct-overlay-active);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 20px;
       margin-right: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--ct-border-color);
     }
 
     .type-income .icon-box {
@@ -70,7 +70,7 @@ export class CtTransactionItem extends LitElement {
     }
 
     .title {
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       font-size: 16px;
       font-weight: 500;
       margin: 0;

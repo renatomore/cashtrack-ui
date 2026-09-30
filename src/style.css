@@ -17,6 +17,10 @@
   --ct-radius-md: 12px;        /* Slightly rounder */
   --ct-radius-lg: 20px;
   
+  --ct-overlay-hover: rgba(255, 255, 255, 0.05);
+  --ct-overlay-active: rgba(255, 255, 255, 0.1);
+  --ct-backdrop: rgba(0, 0, 0, 0.7);
+
   color-scheme: dark;
 }
 
@@ -28,13 +32,17 @@
     --ct-color-error: #D32F2F;
     --ct-color-warning: #F57C00;
     
-    --ct-surface: rgba(255, 255, 255, 0.7);
+    --ct-surface: rgba(255, 255, 255, 0.9);
     --ct-surface-blur: blur(24px);
     --ct-background: #F5F7FA;
     --ct-border-color: rgba(0, 0, 0, 0.06);
     --ct-text-primary: #212121;
     --ct-text-secondary: #757575;
     
+    --ct-overlay-hover: rgba(0, 0, 0, 0.05);
+    --ct-overlay-active: rgba(0, 0, 0, 0.1);
+    --ct-backdrop: rgba(0, 0, 0, 0.3);
+
     color-scheme: light;
   }
 }
@@ -45,13 +53,17 @@
   --ct-color-error: #D32F2F;
   --ct-color-warning: #F57C00;
   
-  --ct-surface: rgba(255, 255, 255, 0.7);
+  --ct-surface: rgba(255, 255, 255, 0.9);
   --ct-surface-blur: blur(24px);
   --ct-background: #F5F7FA;
   --ct-border-color: rgba(0, 0, 0, 0.06);
   --ct-text-primary: #212121;
   --ct-text-secondary: #757575;
   
+  --ct-overlay-hover: rgba(0, 0, 0, 0.05);
+  --ct-overlay-active: rgba(0, 0, 0, 0.1);
+  --ct-backdrop: rgba(0, 0, 0, 0.3);
+
   color-scheme: light;
 }
 
@@ -226,12 +238,42 @@ cashtrack-showcase {
 }
 
 .code-block {
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--ct-surface);
+  backdrop-filter: var(--ct-surface-blur);
+  -webkit-backdrop-filter: var(--ct-surface-blur);
   padding: 16px;
   border-radius: 8px;
   overflow-x: auto;
   font-family: monospace;
-  color: #a0aec0;
+  color: var(--ct-text-primary);
   font-size: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--ct-border-color);
+}
+
+/* Properties Table */
+.props-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  font-family: var(--ct-font-family);
+  font-size: 14px;
+}
+.props-table th {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--ct-border-color);
+  color: var(--ct-text-secondary);
+  font-weight: 600;
+}
+.props-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ct-border-color);
+  color: var(--ct-text-primary);
+}
+.props-table code {
+  background: var(--ct-overlay-hover);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--ct-color-primary);
+  font-family: monospace;
 }

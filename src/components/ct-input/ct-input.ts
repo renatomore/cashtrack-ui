@@ -35,7 +35,7 @@ export class CtInput extends LitElement {
     }
 
     .input-container:hover:not(.disabled) {
-      border-color: rgba(255, 255, 255, 0.3);
+      border-color: var(--ct-text-secondary);
     }
 
     .input-container.focused {
@@ -60,7 +60,7 @@ export class CtInput extends LitElement {
       width: 100%;
       background: transparent;
       border: none;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       font-family: inherit;
       font-size: 16px;
       padding: 24px 16px 8px 16px;

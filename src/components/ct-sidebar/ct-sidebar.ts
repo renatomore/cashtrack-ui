@@ -3,10 +3,13 @@ import { customElement, property } from 'lit/decorators.js';
 import '../ct-icon';
 
 export interface SidebarItem {
+  id?: string;
   label: string;
   icon?: string; // SVG string
   href?: string;
   active?: boolean;
+  isSeparator?: boolean;
+  external?: boolean;
 }
 
 /**
@@ -51,7 +54,7 @@ export class CtSidebar extends LitElement {
     .logo-text {
       font-size: 24px;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       margin: 0;
       letter-spacing: -0.5px;
     }
@@ -92,8 +95,8 @@ export class CtSidebar extends LitElement {
     }
 
     .nav-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-      color: #FFFFFF;
+      background: var(--ct-overlay-hover);
+      color: var(--ct-text-primary);
     }
 
     .nav-item.active {
@@ -115,6 +118,17 @@ export class CtSidebar extends LitElement {
       height: 100%;
     }
 
+    .separator {
+      margin: 24px 16px 8px 16px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--ct-border-color, #333333);
+      color: var(--ct-text-secondary, #B3B3B3);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
     /* Mobile behavior */
     @media (max-width: 768px) {
       .sidebar {
@@ -133,7 +147,7 @@ export class CtSidebar extends LitElement {
       .mobile-backdrop {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.6);
+        background: var(--ct-backdrop, rgba(0, 0, 0, 0.6));
         z-index: 999;
         display: none;
       }
@@ -145,6 +159,7 @@ export class CtSidebar extends LitElement {
   `;
 
   private _handleNavClick(item: SidebarItem) {
+    if (item.isSeparator) return;
     this.dispatchEvent(new CustomEvent('ct-navigate', {
       detail: item,
       bubbles: true,
@@ -190,11 +205,16 @@ export class CtSidebar extends LitElement {
         
         <nav class="nav">
           ${this.items.map(item => {
+            if (item.isSeparator) {
+              return html`<div class="separator">${item.label}</div>`;
+            }
             if (item.href) {
               return html`
                 <a 
                   class="nav-item ${item.active ? 'active' : ''}" 
                   href=${item.href}
+                  target=${item.external ? '_blank' : '_self'}
+                  rel=${item.external ? 'noopener noreferrer' : ''}
                   @click=${this._handleLinkClick}
                   part="nav-item ${item.active ? 'nav-item-active' : ''}"
                 >

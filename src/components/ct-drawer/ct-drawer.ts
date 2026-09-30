@@ -19,7 +19,7 @@ export class CtDrawer extends LitElement {
     .backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: var(--ct-backdrop, rgba(0, 0, 0, 0.6));
       backdrop-filter: blur(4px);
       z-index: 999;
       opacity: 0;
@@ -74,22 +74,24 @@ export class CtDrawer extends LitElement {
       font-family: var(--ct-font-family, 'Montserrat', sans-serif);
       font-size: 20px;
       font-weight: 600;
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
       margin: 0;
     }
 
     .close-btn {
       background: none;
       border: none;
-      color: rgba(255, 255, 255, 0.6);
+      color: var(--ct-text-secondary);
       cursor: pointer;
       padding: 8px;
       display: flex;
-      transition: color 0.2s;
+      transition: color 0.2s, background 0.2s;
+      border-radius: 4px;
     }
 
     .close-btn:hover {
-      color: #FFFFFF;
+      color: var(--ct-text-primary);
+      background: var(--ct-overlay-hover);
     }
 
     .content {
