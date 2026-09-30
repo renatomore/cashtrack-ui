@@ -1,214 +1,110 @@
-# CashTrack UI
+# 💸 CashTrack UI Design System
 
-CashTrack UI é um Design System construído com **Web Components (Lit)**, projetado para ser leve, incrivelmente rápido e agnóstico de framework. Ele pode ser consumido em projetos React, Vue, Angular, Svelte ou puramente com HTML/JS.
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-success?logo=github)](https://renatomore.github.io/cashtrack-ui/)
+[![NPM Version](https://img.shields.io/npm/v/cashtrack-ui?color=blue&logo=npm)](https://www.npmjs.com/package/cashtrack-ui)
+[![Lit](https://img.shields.io/badge/Web_Components-Lit-324FFF?logo=lit)](https://lit.dev/)
 
-A tipografia padrão do projeto utiliza **Montserrat**. Toda a interface suporta e aplica automaticamente os esquemas de cores **Dark Mode / Light Mode**.
+**CashTrack UI** é um Design System moderno, focado no domínio financeiro, construído com **Web Components (Lit)**. Ele foi projetado para ser leve, extremamente rápido e agnóstico de framework, podendo ser integrado em projetos nativos Vanilla JS, React, Vue, Angular ou Svelte.
+
+Conta com suporte nativo a **Dark Mode e Light Mode**, tipografia elegante baseada na fonte *Montserrat* e um visual contemporâneo (*Glassmorphism* em overlays).
 
 ---
 
-## ⚡ Instalação
+## 🔗 Links Úteis
 
-### Usando em um projeto Vite (React, Vue, Vanilla)
+- 🌐 **[Showcase (Live Demo)](https://renatomore.github.io/cashtrack-ui/)**: Explore e interaja com os componentes renderizados na prática, além de consultar a documentação das propriedades em tempo real.
+- 📚 **[Storybook](https://renatomore.github.io/cashtrack-ui/storybook/)**: Documentação técnica e isolada de todos os componentes com controles interativos.
+- 📦 **[NPM Package](https://www.npmjs.com/package/cashtrack-ui)**: Acesso ao pacote publicado.
 
-1. Instale o pacote no seu projeto consumidor (quando publicado) ou instale localmente apontando para este repositório:
+---
 
-\`\`\`bash
+## ⚡ Instalação e Configuração
+
+### 1. Adicionando ao Projeto
+Instale a biblioteca via NPM no seu projeto consumidor:
+
+```bash
 npm install cashtrack-ui
-\`\`\`
+```
 
-2. Importe o CSS Global e registre os Web Components no arquivo principal do seu App (ex: `main.ts` ou `App.tsx`):
+### 2. Importação (React, Vue, Vite, etc.)
+Importe os tokens globais (CSS) e os Web Components no ponto de entrada do seu App (ex: `main.ts` ou `App.tsx`):
 
-\`\`\`javascript
-// Importa o arquivo base de Design Tokens e Reset
+```javascript
+// Importa o Design System (Reset, Variáveis de Tema e Classes Base)
 import 'cashtrack-ui/dist/style.css';
 
-// Importa os Web Components (todos)
+// Registra todos os Web Components no DOM
 import 'cashtrack-ui';
-\`\`\`
+```
 
-3. Certifique-se de importar a fonte Montserrat no seu `index.html`:
+### 3. Fontes e Ícones
+Para garantir o design intencional, importe a tipografia **Montserrat** no arquivo `index.html` do seu projeto:
 
-\`\`\`html
+```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-\`\`\`
+```
 
 ---
 
-## 🧱 Componentes
+## 🎨 Design Tokens e Temas
 
-### Typography (`<ct-typography>`)
-Utilizado para padronizar todos os textos e hierarquias da aplicação.
-- **`variant`**: `h1` | `h2` | `h3` | `body1` | `body2` | `caption`
-- **`color`**: String (CSS Color)
+O **CashTrack UI** disponibiliza todas as suas cores e espaçamentos via **CSS Variables**. Isso facilita a customização no seu próprio app:
 
-\`\`\`html
-<ct-typography variant="h1">Visão Geral</ct-typography>
-<ct-typography variant="body1" color="var(--text-secondary)">
-  Acompanhe seus rendimentos e gastos.
-</ct-typography>
-\`\`\`
+- `--ct-color-primary`: Cor primária (Ciano).
+- `--ct-color-success`: Verde financeiro.
+- `--ct-color-error`: Vermelho de despesa.
+- `--ct-surface`: Cor de fundo dos cartões (Muda dinamicamente com o tema).
+- `--ct-text-primary`: Cor principal do texto (Muda dinamicamente com o tema).
 
-### Button (`<ct-button>`)
-Botão primário para interações e submissão de formulários.
-- **`variant`**: `primary` | `secondary` | `outline` 
-- **`disabled`**: Boolean
+Para alternar entre **Light Mode** e **Dark Mode**, basta aplicar a classe `light-theme` ou `dark-theme` na tag `<body>` ou `:root` do seu projeto. A paleta se ajustará automaticamente.
 
-\`\`\`html
-<ct-button variant="primary">Adicionar Transação</ct-button>
-<ct-button variant="outline" disabled>Ação Indisponível</ct-button>
-\`\`\`
+---
 
-### Badge (`<ct-badge>`)
-Pequenas tags de identificação ou status.
-- **`variant`**: `success` | `error` | `warning` | `info` | `default`
+## 🧱 Guia Rápido de Componentes
 
-\`\`\`html
-<ct-badge variant="success">+ Receita</ct-badge>
-<ct-badge variant="error">- Despesa</ct-badge>
-\`\`\`
+### Textos (`<ct-typography>`)
+```html
+<ct-typography variant="h1">Dashboard</ct-typography>
+<ct-typography variant="body1" color="var(--ct-color-primary)">Saldo atualizado</ct-typography>
+```
 
-### Card (`<ct-card>`)
-Container de layout flutuante para resumos e gráficos. O Card encapsula o conteúdo no Slot e aplica sombras/cores do tema.
+### Botões (`<ct-button>`)
+```html
+<ct-button variant="primary">Adicionar Dinheiro</ct-button>
+<ct-button variant="outline" disabled>Não Permitido</ct-button>
+```
 
-\`\`\`html
+### Entradas Monetárias (`<ct-currency-input>`)
+```html
+<ct-currency-input label="Valor (R$)" value="1500.75"></ct-currency-input>
+```
+
+### Cartões e Painéis (`<ct-card>`)
+```html
 <ct-card>
-  <ct-typography variant="h3">Saldo Atual</ct-typography>
-  <ct-typography variant="h2" color="#4CAF50">R$ 15.300,00</ct-typography>
+  <ct-typography variant="h3">Resumo Mensal</ct-typography>
+  <ct-typography variant="h2" color="var(--ct-color-success)">R$ 15.300,00</ct-typography>
 </ct-card>
-\`\`\`
+```
 
-### Input (`<ct-input>`)
-Campo de entrada de texto padronizado flutuante.
-- **`label`**: String
-- **`type`**: `text` | `password` | `email` | etc.
-- **`value`**: String
-- **`error`**: String (Renderiza mensagem vermelha se presente)
-- **`disabled`**: Boolean
-- **Eventos**: `@ct-change`
-
-\`\`\`html
-<ct-input 
-  label="Nome da Transação" 
-  value="Supermercado">
-</ct-input>
-\`\`\`
-
-### Currency Input (`<ct-currency-input>`)
-Campo especializado que força o usuário a digitar apenas valores monetários. Formata visualmente para `BRL (R$)` enquanto repassa eventos `@ct-change` com valores `Number` limpos.
-- **`label`**: String
-- **`value`**: Number
-- **`error`**: String
-- **`disabled`**: Boolean
-- **Eventos**: `@ct-change`
-
-\`\`\`html
-<ct-currency-input label="Valor (R$)" value="1250.50"></ct-currency-input>
-\`\`\`
-
-### Select (`<ct-select>`)
-Dropdown customizado de seleção de opções.
-- **`label`**: String
-- **`value`**: String
-- **`options`**: Array<{ label: String, value: String }>
-- **Eventos**: `@ct-change`
-
-\`\`\`html
-<!-- (Lembre-se que em frameworks como React/Lit você pode passar objetos complexos via propriedades .options) -->
-<ct-select label="Categoria" value="food"></ct-select>
-\`\`\`
-
-### Icon (`<ct-icon>`)
-Componente para carregar SVGs.
-- **`name`**: String
-- **`size`**: String
-- **`color`**: String
-
-\`\`\`html
-<ct-icon name="dashboard" size="24px" color="#00E5FF"></ct-icon>
-\`\`\`
+*(Consulte o **Showcase** ou o **Storybook** para ver a lista completa de componentes, como Modais, Drawers, Sidebars e mais!)*
 
 ---
 
-## 🛠 Overlays
+## 🛠 Desenvolvimento Local
 
-### Modal (`<ct-modal>`)
-Pop-up fixado no centro da tela e contendo backdrop de blur.
-- **`open`**: Boolean
-- **`disableBackdropClick`**: Boolean
-- **Eventos**: `@ct-close`
-- **Slots**: `title`, `(default)`, `footer`
+Se você deseja rodar ou contribuir com o **CashTrack UI** localmente:
 
-\`\`\`html
-<ct-modal open>
-  <span slot="title">Confirmar Ação</span>
-  <p>Tem certeza que deseja excluir esta transação?</p>
-  <ct-button slot="footer" variant="outline">Cancelar</ct-button>
-  <ct-button slot="footer" variant="primary">Excluir</ct-button>
-</ct-modal>
-\`\`\`
-
-### Drawer (`<ct-drawer>`)
-Painel lateral que desliza sobre o conteúdo para ações em contexto.
-- **`open`**: Boolean
-- **`position`**: `left` | `right`
-- **Eventos**: `@ct-close`
-
-\`\`\`html
-<ct-drawer open position="right">
-  <h2>Filtros</h2>
-</ct-drawer>
-\`\`\`
-
-### Alert (`<ct-alert>`)
-Toasts ou Notificações de rodapé.
-- **`variant`**: `success` | `error` | `warning` | `info`
-- **`position`**: `left` | `center` | `right`
-- **`open`**: Boolean
-- **Eventos**: `@ct-close`
-- **Slots**: `(default)`
-
-\`\`\`html
-<ct-alert variant="success" open position="right">
-  Transação salva com sucesso!
-</ct-alert>
-\`\`\`
+1. Clone o repositório.
+2. Instale as dependências: `npm install`
+3. Rode o servidor de Showcase: `npm run dev`
+4. Rode o Storybook: `npm run storybook`
+5. Execute os testes: `npm run test`
 
 ---
 
-## 🧩 Complex Blocks
-
-### Sidebar (`<ct-sidebar>`)
-Menu lateral de navegação principal da aplicação, contendo links e ícones.
-- **`mobileOpen`**: Boolean
-- **`items`**: Array<{ label, href, icon }>
-
-### Transaction Item (`<ct-transaction-item>`)
-Bloco visual para renderizar um evento transacional do CashTrack.
-- **`type`**: `income` | `expense`
-- **`amount`**: Number
-- **`category`**: String
-- **`date`**: String
-- **Slots**: `(default / título)`
-
-\`\`\`html
-<ct-transaction-item type="expense" amount="150.75" category="Alimentação" date="12 Out 2026">
-  Supermercado
-</ct-transaction-item>
-\`\`\`
-
----
-
-## 🎨 Design Tokens
-
-As variáveis CSS globais fornecidas em \`style.css\` estão disponíveis para você usar no seu App. 
-
-- \`--ct-color-primary\`: #00E5FF
-- \`--ct-color-success\`: #4CAF50
-- \`--ct-color-error\`: #F44336
-- \`--ct-surface\`: #1E1E1E (Dark) / #FFFFFF (Light)
-- \`--ct-text-primary\`: #FFFFFF (Dark) / #000000 (Light)
-
-> **Nota para Integração em React:** 
-> O React clássico (anterior ao 19) trata atributos estritos em Web Components como strings ou necessita de refs. Para passar objetos (`options`, `items`) de forma reativa e sem fricção ou ligar eventos customizados como `@ct-change`, você pode utilizar bibliotecas como o `@lit/react` (createComponent) em projetos puramente React.
+> **Nota para Integração com React (v18 ou inferior):** 
+> O React clássico trata atributos complexos em Web Components como strings. Para repassar objetos (ex: `options` em um `<ct-select>`) ou ligar eventos customizados (`@ct-change`), você pode criar *wrappers* usando a biblioteca oficial `@lit/react` (`createComponent`). No **React 19+**, o suporte nativo a Custom Elements já é excelente.
