@@ -1,11 +1,6 @@
 {
   "en": [
     {
-      "version": "Unreleased",
-      "date": "",
-      "changes": {}
-    },
-    {
       "version": "0.3.0",
       "date": "2026-09-30",
       "changes": {
@@ -64,11 +59,6 @@
     }
   ],
   "pt-BR": [
-    {
-      "version": "Unreleased",
-      "date": "",
-      "changes": {}
-    },
     {
       "version": "0.3.0",
       "date": "2026-09-30",
