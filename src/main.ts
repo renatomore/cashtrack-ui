@@ -34,7 +34,7 @@ export class CashtrackShowcase extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
-    fetch('/changelog.json')
+    fetch(`${import.meta.env.BASE_URL}changelog.json`)
       .then(r => r.json())
       .then(data => this.changelogData = data)
       .catch(e => console.error('Failed to load changelog', e));
