@@ -8,13 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.4.0] - 2026-10-01
 
 ### Added
+- `ct-card`: Adicionada nova propriedade `glowingCard` que aplica um efeito dourado brilhante no card.
 - Showcase: Adicionado botão de menu hambúrguer no cabeçalho para navegação responsiva em telas mobile.
 - Docs: O arquivo `README.md` foi internacionalizado, incluindo versões em Inglês (EN-US) e Português (BR), juntamente com links para o Showcase e Repositório do GitHub.
 
 ## [0.3.2] - 2026-09-30
 
 ### Fixed
-- Showcase: Resolvido problema de erro 404 no carregamento do `changelog.json` no GitHub Pages através do uso de caminho relativo ao `BASE_URL`.
+- Showcase: Resolved 404 error when loading `changelog.json` on GitHub Pages by using a path relative to `BASE_URL`.
 
 ## [0.3.1] - 2026-09-30
 

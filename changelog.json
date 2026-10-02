@@ -1,6 +1,25 @@
 {
   "en": [
     {
+      "version": "0.4.0",
+      "date": "2026-10-01",
+      "changes": {
+        "Added": [
+          "Showcase: Adicionado botão de menu hambúrguer no cabeçalho para navegação responsiva em telas mobile.",
+          "Docs: O arquivo `README.md` foi internacionalizado, incluindo versões em Inglês (EN-US) e Português (BR), juntamente com links para o Showcase e Repositório do GitHub."
+        ]
+      }
+    },
+    {
+      "version": "0.3.2",
+      "date": "2026-09-30",
+      "changes": {
+        "Fixed": [
+          "Showcase: Resolvido problema de erro 404 no carregamento do `changelog.json` no GitHub Pages através do uso de caminho relativo ao `BASE_URL`."
+        ]
+      }
+    },
+    {
       "version": "0.3.1",
       "date": "2026-09-30",
       "changes": {

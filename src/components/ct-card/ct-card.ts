@@ -11,6 +11,11 @@ export class CtCard extends LitElement {
    */
   @property({ type: Boolean }) glass = false;
 
+  /**
+   * Defines if the card should use the glowing gold effect
+   */
+  @property({ type: Boolean }) glowingCard = false;
+
   static styles = css`
     :host {
       display: block;
@@ -35,11 +40,25 @@ export class CtCard extends LitElement {
       border: 1px solid var(--ct-border-color);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     }
+
+    .card-gold-glow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-gold-glow::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(251, 191, 36, 0.15) 0%, transparent 60%);
+      border-radius: var(--ct-radius-lg, 16px);
+      pointer-events: none;
+    }
   `;
 
   render() {
     return html`
-      <div class="card ${this.glass ? 'glass' : ''}" part="base">
+      <div class="card ${this.glass ? 'glass' : ''} ${this.glowingCard ? 'card-gold-glow' : ''}" part="base">
         <slot></slot>
       </div>
     `;
