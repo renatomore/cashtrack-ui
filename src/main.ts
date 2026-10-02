@@ -9,6 +9,7 @@ import './components/ct-card';
 import './components/ct-input';
 import './components/ct-currency-input';
 import './components/ct-select';
+import './components/ct-datepicker';
 import './components/ct-icon';
 import './components/ct-modal';
 import './components/ct-drawer';
@@ -53,6 +54,7 @@ export class CashtrackShowcase extends LitElement {
       { id: 'card', label: t.card, icon: 'space_dashboard', active: this.activeRouteId === 'card' },
       { id: 'input', label: t.input, icon: 'input', active: this.activeRouteId === 'input' },
       { id: 'select', label: t.select, icon: 'arrow_drop_down_circle', active: this.activeRouteId === 'select' },
+      { id: 'datepicker', label: t.datepicker, icon: 'calendar_today', active: this.activeRouteId === 'datepicker' },
       { id: 'modal', label: t.modal, icon: 'picture_in_picture', active: this.activeRouteId === 'modal' },
       { id: 'drawer', label: t.drawer, icon: 'vertical_split', active: this.activeRouteId === 'drawer' },
       { id: 'alert', label: t.alert, icon: 'warning', active: this.activeRouteId === 'alert' },
@@ -277,6 +279,33 @@ export class CashtrackShowcase extends LitElement {
           { name: 'options', type: 'SelectOption[]', defaultVal: '[]', desc: 'Array of option objects ({label, value, icon, image}).' },
           { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the select.' },
           { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables select interaction.' }
+        ])}
+        `;
+
+      case 'datepicker':
+        return html`
+          <ct-typography variant="h1">${s.datepicker}</ct-typography>
+          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+            ${t.datepickerDesc}
+          </ct-typography>
+          <ct-card style="margin-bottom: 24px;">
+            <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; max-width: 400px;">
+              <ct-datepicker label="${t.datepickerLabel}"></ct-datepicker>
+              <ct-datepicker label="Data (US Format)" format="MM/DD/YYYY" locale="en-US"></ct-datepicker>
+              <ct-datepicker label="${t.datepickerLabel} (Disabled)" disabled></ct-datepicker>
+            </div>
+            <pre class="code-block"><code>&lt;ct-datepicker label="Data" format="MM/DD/YYYY" locale="en-US"&gt;&lt;/ct-datepicker&gt;</code></pre>
+          </ct-card>
+
+          ${this._renderPropsTable([
+          { name: 'label', type: 'string', defaultVal: "''", desc: 'Floating label text for the datepicker.' },
+          { name: 'value', type: 'string', defaultVal: "''", desc: 'The current selected date (YYYY-MM-DD).' },
+          { name: 'format', type: "'DD/MM/YYYY' | 'MM/DD/YYYY' | 'YYYY/MM/DD'", defaultVal: "'DD/MM/YYYY'", desc: 'Date format for the input mask and display.' },
+          { name: 'locale', type: 'string', defaultVal: "'pt-BR'", desc: 'Locale for calendar labels (e.g., pt-BR, en-US).' },
+          { name: 'min', type: 'string', defaultVal: "''", desc: 'Minimum allowed date.' },
+          { name: 'max', type: 'string', defaultVal: "''", desc: 'Maximum allowed date.' },
+          { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the input.' },
+          { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables datepicker interaction.' }
         ])}
         `;
 
