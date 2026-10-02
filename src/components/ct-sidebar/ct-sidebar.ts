@@ -103,7 +103,7 @@ export class CtSidebar extends LitElement {
       padding: 12px 16px;
       color: var(--ct-text-secondary, #B3B3B3);
       text-decoration: none;
-      border-radius: var(--ct-radius-md, 12px);
+      border-radius: var(--ct-radius-md, 8px);
       transition: all 0.2s;
       font-weight: 500;
       cursor: pointer;

@@ -1,6 +1,19 @@
 {
   "en": [
     {
+      "version": "0.5.0",
+      "date": "2026-10-02",
+      "changes": {
+        "Added": [
+          "\\`ct-datepicker\\`: New custom glassmorphism datepicker component with dynamic masking, bounds validation (\\`min\\`/\\`max\\`), and dynamic layout for selecting days, months, and years.",
+          "\\`ct-datepicker\\`: Added \\`format\\` property (\\`DD/MM/YYYY\\`, \\`MM/DD/YYYY\\`, \\`YYYY/MM/DD\\`) and \\`locale\\` property (e.g. \\`pt-BR\\`, \\`en-US\\`) for internationalization and customizable input masks."
+        ],
+        "Changed": [
+          "\\`ct-sidebar\\`: Updated menu item border radius to 8px to align with the design system standards."
+        ]
+      }
+    },
+    {
       "version": "0.4.0",
       "date": "2026-10-01",
       "changes": {
@@ -88,6 +101,19 @@
     }
   ],
   "pt-BR": [
+    {
+      "version": "0.5.0",
+      "date": "2026-10-02",
+      "changes": {
+        "Adicionado": [
+          "\\`ct-datepicker\\`: Novo componente de datepicker customizado com estilo glassmorphism, máscara dinâmica, validação de limites (\\`min\\`/\\`max\\`), e visualizações dinâmicas para seleção de dias, meses e anos.",
+          "\\`ct-datepicker\\`: Adicionada as propriedades \\`format\\` (\\`DD/MM/YYYY\\`, \\`MM/DD/YYYY\\`, \\`YYYY/MM/DD\\`) e \\`locale\\` (ex: \\`pt-BR\\`, \\`en-US\\`) para internacionalização e máscaras de input customizáveis."
+        ],
+        "Alterado": [
+          "\\`ct-sidebar\\`: Atualizado o border-radius dos itens de menu para 8px, alinhando com o padrão do design system."
+        ]
+      }
+    },
     {
       "version": "0.4.0",
       "date": "2026-10-01",
