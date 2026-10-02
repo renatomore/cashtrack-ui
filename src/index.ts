@@ -11,3 +11,4 @@ export * from './components/ct-icon';
 export * from './components/ct-select';
 export * from './components/ct-transaction-item';
 export * from './components/ct-sidebar';
+export * from './components/ct-datepicker';

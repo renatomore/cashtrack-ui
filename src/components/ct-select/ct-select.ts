@@ -226,8 +226,17 @@ export class CtSelect extends LitElement {
     return '';
   }
 
+  private get _safeOptions(): SelectOption[] {
+    if (Array.isArray(this.options)) return this.options;
+    if (typeof this.options === 'string') {
+      try { return JSON.parse(this.options); } catch { return []; }
+    }
+    return [];
+  }
+
   render() {
-    const selectedOption = this.options.find(opt => opt.value === this.value);
+    const safeOptions = this._safeOptions;
+    const selectedOption = safeOptions.find(opt => opt.value === this.value);
     const hasValue = !!this.value;
 
     const containerClasses = [
@@ -257,7 +266,7 @@ export class CtSelect extends LitElement {
       </div>
       
       <div class="dropdown ${this._open ? 'open' : ''}" part="dropdown">
-        ${this.options.map(opt => html`
+        ${safeOptions.map(opt => html`
           <div 
             class="option ${this.value === opt.value ? 'selected' : ''}" 
             @click=${() => this._handleSelect(opt.value)}
@@ -267,7 +276,7 @@ export class CtSelect extends LitElement {
             <span>${opt.label}</span>
           </div>
         `)}
-        ${this.options.length === 0 ? html`<div class="option" style="color: #757575;">Nenhuma opção</div>` : ''}
+        ${safeOptions.length === 0 ? html`<div class="option" style="color: #757575;">Nenhuma opção</div>` : ''}
       </div>
       
       ${this.error ? html`<div class="error-message" part="error">${this.error}</div>` : ''}
