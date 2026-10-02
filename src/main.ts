@@ -83,7 +83,7 @@ export class CashtrackShowcase extends LitElement {
     this.currentLang = e.detail.value as Language;
   }
 
-  private _renderPropsTable(props: Array<{name: string, type: string, defaultVal: string, desc: string}>) {
+  private _renderPropsTable(props: Array<{ name: string, type: string, defaultVal: string, desc: string }>) {
     const t = translations[this.currentLang].docs;
     return html`
       <ct-card style="margin-top: 24px;">
@@ -168,10 +168,10 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
           
           ${this._renderPropsTable([
-            { name: 'variant', type: "'primary' | 'secondary' | 'tonal' | 'neon' | 'neumorph' | 'outline' | 'text'", defaultVal: "'primary'", desc: 'The visual variant of the button.' },
-            { name: 'size', type: "'small' | 'medium' | 'large'", defaultVal: "'medium'", desc: 'The sizing scale of the button.' },
-            { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables button interactions.' }
-          ])}
+          { name: 'variant', type: "'primary' | 'secondary' | 'tonal' | 'neon' | 'neumorph' | 'outline' | 'text'", defaultVal: "'primary'", desc: 'The visual variant of the button.' },
+          { name: 'size', type: "'small' | 'medium' | 'large'", defaultVal: "'medium'", desc: 'The sizing scale of the button.' },
+          { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables button interactions.' }
+        ])}
         `;
 
       case 'typography':
@@ -193,9 +193,9 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'variant', type: "'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'caption'", defaultVal: "'body1'", desc: 'The typography scale and HTML element to use.' },
-            { name: 'color', type: "'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error' | 'success'", defaultVal: "'textPrimary'", desc: 'Semantic color to apply to the text.' }
-          ])}
+          { name: 'variant', type: "'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'caption'", defaultVal: "'body1'", desc: 'The typography scale and HTML element to use.' },
+          { name: 'color', type: "'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error' | 'success'", defaultVal: "'textPrimary'", desc: 'Semantic color to apply to the text.' }
+        ])}
         `;
 
       case 'card':
@@ -209,7 +209,7 @@ export class CashtrackShowcase extends LitElement {
               <ct-typography variant="h3">Standard Card</ct-typography>
               <ct-typography variant="body1" color="var(--ct-text-secondary)">${t.cardStandardBody}</ct-typography>
             </ct-card>
-            <ct-card class="card-gold-glow">
+            <ct-card glowingCard="true">
               <ct-typography variant="h3" class="text-gold">Glowing Card</ct-typography>
               <ct-typography variant="body1" color="var(--ct-text-secondary)">${t.cardGlowBody}</ct-typography>
             </ct-card>
@@ -221,8 +221,9 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'glass', type: 'boolean', defaultVal: 'false', desc: 'Applies an elevated glassmorphism effect (box-shadow and higher blur).' }
-          ])}
+          { name: 'glass', type: 'boolean', defaultVal: 'false', desc: 'Applies an elevated glassmorphism effect (box-shadow and higher blur).' },
+          { name: 'glowingCard', type: 'boolean', defaultVal: 'false', desc: 'Applies a gold glowing effect to the card.' }
+        ])}
         `;
 
       case 'input':
@@ -243,12 +244,12 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'label', type: 'string', defaultVal: "''", desc: 'Floating label text for the input.' },
-            { name: 'value', type: 'string', defaultVal: "''", desc: 'The current value of the input.' },
-            { name: 'type', type: 'string', defaultVal: "'text'", desc: 'Native input type (text, email, password, etc).' },
-            { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the input.' },
-            { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables input interaction.' }
-          ])}
+          { name: 'label', type: 'string', defaultVal: "''", desc: 'Floating label text for the input.' },
+          { name: 'value', type: 'string', defaultVal: "''", desc: 'The current value of the input.' },
+          { name: 'type', type: 'string', defaultVal: "'text'", desc: 'Native input type (text, email, password, etc).' },
+          { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the input.' },
+          { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables input interaction.' }
+        ])}
         `;
 
       case 'select':
@@ -261,7 +262,7 @@ export class CashtrackShowcase extends LitElement {
             <div style="margin-bottom: 24px; max-width: 400px;">
               <ct-select 
                 label="${t.selectCategory}" 
-                .options="${[{label: t.selectFood, value: 'food'}, {label: t.selectSalary, value: 'salary'}]}">
+                .options="${[{ label: t.selectFood, value: 'food' }, { label: t.selectSalary, value: 'salary' }]}">
               </ct-select>
             </div>
             <pre class="code-block"><code>&lt;ct-select 
@@ -271,12 +272,12 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'label', type: 'string', defaultVal: "''", desc: 'Floating label text for the select.' },
-            { name: 'value', type: 'string', defaultVal: "''", desc: 'The current selected value.' },
-            { name: 'options', type: 'SelectOption[]', defaultVal: '[]', desc: 'Array of option objects ({label, value, icon, image}).' },
-            { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the select.' },
-            { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables select interaction.' }
-          ])}
+          { name: 'label', type: 'string', defaultVal: "''", desc: 'Floating label text for the select.' },
+          { name: 'value', type: 'string', defaultVal: "''", desc: 'The current selected value.' },
+          { name: 'options', type: 'SelectOption[]', defaultVal: '[]', desc: 'Array of option objects ({label, value, icon, image}).' },
+          { name: 'error', type: 'string', defaultVal: "''", desc: 'Error message to display below the select.' },
+          { name: 'disabled', type: 'boolean', defaultVal: 'false', desc: 'Disables select interaction.' }
+        ])}
         `;
 
       case 'modal':
@@ -300,9 +301,9 @@ export class CashtrackShowcase extends LitElement {
           </ct-modal>
 
           ${this._renderPropsTable([
-            { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the modal is visible.' },
-            { name: 'disableBackdropClick', type: 'boolean', defaultVal: 'false', desc: 'Prevents closing the modal when clicking outside.' }
-          ])}
+          { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the modal is visible.' },
+          { name: 'disableBackdropClick', type: 'boolean', defaultVal: 'false', desc: 'Prevents closing the modal when clicking outside.' }
+        ])}
         `;
 
       case 'drawer':
@@ -323,9 +324,9 @@ export class CashtrackShowcase extends LitElement {
           </ct-drawer>
 
           ${this._renderPropsTable([
-            { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the drawer is visible.' },
-            { name: 'position', type: "'left' | 'right'", defaultVal: "'right'", desc: 'Which side of the screen the drawer slides from.' }
-          ])}
+          { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the drawer is visible.' },
+          { name: 'position', type: "'left' | 'right'", defaultVal: "'right'", desc: 'Which side of the screen the drawer slides from.' }
+        ])}
         `;
 
       case 'alert':
@@ -347,10 +348,10 @@ export class CashtrackShowcase extends LitElement {
           </ct-alert>
 
           ${this._renderPropsTable([
-            { name: 'variant', type: "'success' | 'error' | 'warning' | 'info'", defaultVal: "'info'", desc: 'Semantic intent of the alert.' },
-            { name: 'position', type: "'left' | 'center' | 'right'", defaultVal: "'right'", desc: 'Screen placement position.' },
-            { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the alert is visible.' }
-          ])}
+          { name: 'variant', type: "'success' | 'error' | 'warning' | 'info'", defaultVal: "'info'", desc: 'Semantic intent of the alert.' },
+          { name: 'position', type: "'left' | 'center' | 'right'", defaultVal: "'right'", desc: 'Screen placement position.' },
+          { name: 'open', type: 'boolean', defaultVal: 'false', desc: 'Controls whether the alert is visible.' }
+        ])}
         `;
 
       case 'transaction':
@@ -374,13 +375,13 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'title', type: 'string', defaultVal: "''", desc: 'Main title of the transaction.' },
-            { name: 'date', type: 'string', defaultVal: "''", desc: 'Formatted date of the transaction.' },
-            { name: 'category', type: 'string', defaultVal: "''", desc: 'Optional category name.' },
-            { name: 'amount', type: 'number', defaultVal: '0', desc: 'Transaction value (will be formatted automatically).' },
-            { name: 'type', type: "'income' | 'expense'", defaultVal: "'expense'", desc: 'Visual indicator of money flow.' },
-            { name: 'icon', type: 'string', defaultVal: "''", desc: 'Icon name (Material Symbols) or raw SVG.' }
-          ])}
+          { name: 'title', type: 'string', defaultVal: "''", desc: 'Main title of the transaction.' },
+          { name: 'date', type: 'string', defaultVal: "''", desc: 'Formatted date of the transaction.' },
+          { name: 'category', type: 'string', defaultVal: "''", desc: 'Optional category name.' },
+          { name: 'amount', type: 'number', defaultVal: '0', desc: 'Transaction value (will be formatted automatically).' },
+          { name: 'type', type: "'income' | 'expense'", defaultVal: "'expense'", desc: 'Visual indicator of money flow.' },
+          { name: 'icon', type: 'string', defaultVal: "''", desc: 'Icon name (Material Symbols) or raw SVG.' }
+        ])}
         `;
 
       case 'badge':
@@ -401,8 +402,8 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-            { name: 'variant', type: "'success' | 'error' | 'warning' | 'info' | 'default'", defaultVal: "'default'", desc: 'Visual variant representing the status.' }
-          ])}
+          { name: 'variant', type: "'success' | 'error' | 'warning' | 'info' | 'default'", defaultVal: "'default'", desc: 'Visual variant representing the status.' }
+        ])}
         `;
 
       case 'changelog':
@@ -444,18 +445,18 @@ export class CashtrackShowcase extends LitElement {
           <div style="max-width: 800px; margin: 0 auto; width: 100%;">
             <div class="header" style="justify-content: flex-end; gap: 16px;">
               <button class="mobile-menu-btn" @click="${() => {
-                const sidebar = this.querySelector('ct-sidebar');
-                if (sidebar) sidebar.mobileOpen = true;
-              }}" style="margin-right: auto; background: transparent; border: none; color: var(--ct-text-primary); cursor: pointer; padding: 8px; display: flex; align-items: center; border-radius: 8px;">
+        const sidebar = this.querySelector('ct-sidebar');
+        if (sidebar) sidebar.mobileOpen = true;
+      }}" style="margin-right: auto; background: transparent; border: none; color: var(--ct-text-primary); cursor: pointer; padding: 8px; display: flex; align-items: center; border-radius: 8px;">
                 <ct-icon name="menu" size="28px" color="currentColor"></ct-icon>
               </button>
               <div style="width: 140px;">
                 <ct-select
                   .value="${this.currentLang}"
                   .options="${[
-                    {label: 'PT-BR', value: 'pt', image: 'https://flagcdn.com/w20/br.png'}, 
-                    {label: 'EN-US', value: 'en', image: 'https://flagcdn.com/w20/us.png'}
-                  ]}"
+        { label: 'PT-BR', value: 'pt', image: 'https://flagcdn.com/w20/br.png' },
+        { label: 'EN-US', value: 'en', image: 'https://flagcdn.com/w20/us.png' }
+      ]}"
                   @ct-change="${this._handleLanguageChange}">
                 </ct-select>
               </div>

@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-10-01
+
+### Added
+- `ct-card`: Added new `glowingCard` property that applies a shimmering golden effect to the card.
+- Showcase: Hamburger menu button added to the header for responsive navigation on mobile screens.
+- Docs: The `README.md` file has been internationalized, including English (EN-US) and Portuguese (BR) versions, along with links to the Showcase and GitHub Repository.
+
+## [0.3.2] - 2026-09-30
+
+### Fixed
+- Showcase: Resolved 404 error when loading `changelog.json` on GitHub Pages by using a path relative to `BASE_URL`.
+
 ## [0.3.1] - 2026-09-30
 
 ### Fixed
