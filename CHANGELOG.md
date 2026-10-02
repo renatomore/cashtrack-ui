@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-10-01
+
+### Added
+- Showcase: Adicionado botão de menu hambúrguer no cabeçalho para navegação responsiva em telas mobile.
+- Docs: O arquivo `README.md` foi internacionalizado, incluindo versões em Inglês (EN-US) e Português (BR), juntamente com links para o Showcase e Repositório do GitHub.
+
+## [0.3.2] - 2026-09-30
+
+### Fixed
+- Showcase: Resolvido problema de erro 404 no carregamento do `changelog.json` no GitHub Pages através do uso de caminho relativo ao `BASE_URL`.
+
 ## [0.3.1] - 2026-09-30
 
 ### Fixed
