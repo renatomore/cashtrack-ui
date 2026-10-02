@@ -5,6 +5,15 @@ Todas as alterações notáveis a este projeto serão documentadas neste arquivo
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.5.0] - 2026-10-02
+
+### Adicionado
+- \`ct-datepicker\`: Novo componente de datepicker customizado com estilo glassmorphism, máscara dinâmica, validação de limites (\`min\`/\`max\`), e visualizações dinâmicas para seleção de dias, meses e anos.
+- \`ct-datepicker\`: Adicionada as propriedades \`format\` (\`DD/MM/YYYY\`, \`MM/DD/YYYY\`, \`YYYY/MM/DD\`) e \`locale\` (ex: \`pt-BR\`, \`en-US\`) para internacionalização e máscaras de input customizáveis.
+
+### Alterado
+- \`ct-sidebar\`: Atualizado o border-radius dos itens de menu para 8px, alinhando com o padrão do design system.
+
 ## [0.4.0] - 2026-10-01
 
 ### Adicionado
