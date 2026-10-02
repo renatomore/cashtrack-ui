@@ -443,6 +443,12 @@ export class CashtrackShowcase extends LitElement {
         <div class="main-content">
           <div style="max-width: 800px; margin: 0 auto; width: 100%;">
             <div class="header" style="justify-content: flex-end; gap: 16px;">
+              <button class="mobile-menu-btn" @click="${() => {
+                const sidebar = this.querySelector('ct-sidebar');
+                if (sidebar) sidebar.mobileOpen = true;
+              }}" style="margin-right: auto; background: transparent; border: none; color: var(--ct-text-primary); cursor: pointer; padding: 8px; display: flex; align-items: center; border-radius: 8px;">
+                <ct-icon name="menu" size="28px" color="currentColor"></ct-icon>
+              </button>
               <div style="width: 140px;">
                 <ct-select
                   .value="${this.currentLang}"
