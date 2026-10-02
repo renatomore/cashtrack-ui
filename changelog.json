@@ -5,8 +5,9 @@
       "date": "2026-10-01",
       "changes": {
         "Added": [
-          "Showcase: Adicionado botão de menu hambúrguer no cabeçalho para navegação responsiva em telas mobile.",
-          "Docs: O arquivo `README.md` foi internacionalizado, incluindo versões em Inglês (EN-US) e Português (BR), juntamente com links para o Showcase e Repositório do GitHub."
+          "`ct-card`: Added new `glowingCard` property that applies a shimmering golden effect to the card.",
+          "Showcase: Hamburger menu button added to the header for responsive navigation on mobile screens.",
+          "Docs: The `README.md` file has been internationalized, including English (EN-US) and Portuguese (BR) versions, along with links to the Showcase and GitHub Repository."
         ]
       }
     },
@@ -15,7 +16,7 @@
       "date": "2026-09-30",
       "changes": {
         "Fixed": [
-          "Showcase: Resolvido problema de erro 404 no carregamento do `changelog.json` no GitHub Pages através do uso de caminho relativo ao `BASE_URL`."
+          "Showcase: Resolved 404 error when loading `changelog.json` on GitHub Pages by using a path relative to `BASE_URL`."
         ]
       }
     },
@@ -87,6 +88,26 @@
     }
   ],
   "pt-BR": [
+    {
+      "version": "0.4.0",
+      "date": "2026-10-01",
+      "changes": {
+        "Adicionado": [
+          "`ct-card`: Adicionada nova propriedade `glowingCard` que aplica um efeito de brilho dourado ao card.",
+          "Showcase: Botão de menu hamburger adicionado ao header para navegação responsiva em telas mobile.",
+          "Docs: O arquivo `README.md` foi internacionalizado, incluindo versões em Inglês (EN-US) e Português (BR), além de links para o Showcase e Repositório do GitHub."
+        ]
+      }
+    },
+    {
+      "version": "0.3.2",
+      "date": "2026-09-30",
+      "changes": {
+        "Corrigido": [
+          "Showcase: Resolvido problema de erro 404 no carregamento do `changelog.json` no GitHub Pages através do uso de caminho relativo ao `BASE_URL`."
+        ]
+      }
+    },
     {
       "version": "0.3.1",
       "date": "2026-09-30",
