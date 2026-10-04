@@ -13,6 +13,12 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
 ### Alterado
 - \`ct-sidebar\`: Atualizado o border-radius dos itens de menu para 8px, alinhando com o padrão do design system.
+- \`ct-button\`: Escurecido o gradiente do botão primary para um tom "deep teal" (\`#0093A8\` para \`#006073\`), melhorando significativamente o contraste e a legibilidade do texto branco.
+- \`ct-button\`: Adicionado efeito de "profundidade" (destaques de \`inset shadow\` finos e gradientes translúcidos) a todas as outras variantes de botão (Secondary, Tonal, Neon, Neumorph, Outline) para alinhar com o estilo glass 3D do botão primário.
+- \`Storybook\`: Adicionadas histórias interativas ausentes para as novas propriedades do \`ct-card\` (glass, glowingCard), \`ct-datepicker\` (format, locale) e \`ct-input\` (autocomplete).
+
+### Corrigido
+- \`ct-select\`: Adicionado um \`getter\` e \`setter\` robusto para a propriedade \`options\`, contendo parsing seguro (\`JSON.parse\`) para casos onde o array é passado como string diretamente no atributo HTML.
 
 ## [0.4.0] - 2026-10-01
 

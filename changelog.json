@@ -9,7 +9,13 @@
           "\\`ct-datepicker\\`: Added \\`format\\` property (\\`DD/MM/YYYY\\`, \\`MM/DD/YYYY\\`, \\`YYYY/MM/DD\\`) and \\`locale\\` property (e.g. \\`pt-BR\\`, \\`en-US\\`) for internationalization and customizable input masks."
         ],
         "Changed": [
-          "\\`ct-sidebar\\`: Updated menu item border radius to 8px to align with the design system standards."
+          "\\`ct-sidebar\\`: Updated menu item border radius to 8px to align with the design system standards.",
+          "\\`ct-button\\`: Deepened the primary button gradient to a dark teal (\\`#0093A8\\` to \\`#006073\\`) to significantly improve contrast and readability for white text.",
+          "\\`ct-button\\`: Added depth effects (inset shadow highlights and subtle gradients) to all other button variants (Secondary, Tonal, Neon, Neumorph, Outline) to match the primary button's 3D glass style.",
+          "\\`Storybook\\`: Added missing stories for \\`ct-card\\` (glass, glowingCard), \\`ct-datepicker\\` (format, locale), and \\`ct-input\\` (autocomplete)."
+        ],
+        "Fixed": [
+          "\\`ct-select\\`: Added a robust getter and setter for the \\`options\\` property, safely parsing stringified JSON inputs from pure HTML attributes."
         ]
       }
     },
@@ -110,7 +116,13 @@
           "\\`ct-datepicker\\`: Adicionada as propriedades \\`format\\` (\\`DD/MM/YYYY\\`, \\`MM/DD/YYYY\\`, \\`YYYY/MM/DD\\`) e \\`locale\\` (ex: \\`pt-BR\\`, \\`en-US\\`) para internacionalização e máscaras de input customizáveis."
         ],
         "Alterado": [
-          "\\`ct-sidebar\\`: Atualizado o border-radius dos itens de menu para 8px, alinhando com o padrão do design system."
+          "\\`ct-sidebar\\`: Atualizado o border-radius dos itens de menu para 8px, alinhando com o padrão do design system.",
+          "\\`ct-button\\`: Escurecido o gradiente do botão primary para um tom \"deep teal\" (\\`#0093A8\\` para \\`#006073\\`), melhorando significativamente o contraste e a legibilidade do texto branco.",
+          "\\`ct-button\\`: Adicionado efeito de \"profundidade\" (destaques de \\`inset shadow\\` finos e gradientes translúcidos) a todas as outras variantes de botão (Secondary, Tonal, Neon, Neumorph, Outline) para alinhar com o estilo glass 3D do botão primário.",
+          "\\`Storybook\\`: Adicionadas histórias interativas ausentes para as novas propriedades do \\`ct-card\\` (glass, glowingCard), \\`ct-datepicker\\` (format, locale) e \\`ct-input\\` (autocomplete)."
+        ],
+        "Corrigido": [
+          "\\`ct-select\\`: Adicionado um \\`getter\\` e \\`setter\\` robusto para a propriedade \\`options\\`, contendo parsing seguro (\\`JSON.parse\\`) para casos onde o array é passado como string diretamente no atributo HTML."
         ]
       }
     },
