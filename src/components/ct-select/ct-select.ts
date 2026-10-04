@@ -16,7 +16,29 @@ export interface SelectOption {
 export class CtSelect extends LitElement {
   @property({ type: String }) label = '';
   @property({ type: String }) value = '';
-  @property({ type: Array }) options: SelectOption[] = [];
+  private _options: SelectOption[] = [];
+
+  @property({ type: Array })
+  get options(): SelectOption[] {
+    return this._options || [];
+  }
+
+  set options(val: any) {
+    const oldVal = this._options;
+    if (typeof val === 'string') {
+      try {
+        this._options = JSON.parse(val);
+      } catch {
+        this._options = [];
+      }
+    } else if (Array.isArray(val)) {
+      this._options = val;
+    } else {
+      this._options = [];
+    }
+    this.requestUpdate('options', oldVal);
+  }
+
   @property({ type: String }) error = '';
   @property({ type: Boolean }) disabled = false;
 
