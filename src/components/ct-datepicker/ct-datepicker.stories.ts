@@ -11,6 +11,11 @@ const meta: Meta = {
     min: { control: 'text' },
     max: { control: 'text' },
     disabled: { control: 'boolean' },
+    format: { 
+      control: 'select', 
+      options: ['DD/MM/YYYY', 'MM/DD/YYYY', 'YYYY/MM/DD']
+    },
+    locale: { control: 'text' },
   },
 };
 
@@ -21,6 +26,8 @@ export const Default: Story = {
   args: {
     label: 'Data da Transação',
     value: '',
+    format: 'DD/MM/YYYY',
+    locale: 'pt-BR'
   },
 };
 
@@ -53,5 +60,14 @@ export const Disabled: Story = {
     label: 'Data de Fechamento',
     value: '2026-09-30',
     disabled: true,
+  },
+};
+
+export const USFormat: Story = {
+  args: {
+    label: 'Date of Birth (US)',
+    value: '2000-12-31',
+    format: 'MM/DD/YYYY',
+    locale: 'en-US'
   },
 };

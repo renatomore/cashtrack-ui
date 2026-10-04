@@ -10,6 +10,7 @@ const meta: Meta = {
     value: { control: 'text' },
     error: { control: 'text' },
     placeholder: { control: 'text' },
+    autocomplete: { control: 'text' },
   },
 };
 
@@ -38,5 +39,13 @@ export const Error: Story = {
     type: 'password',
     value: '123',
     error: 'A senha é muito fraca',
+  },
+};
+
+export const AutocompleteOff: Story = {
+  args: {
+    label: 'Código de Segurança',
+    type: 'text',
+    autocomplete: 'off',
   },
 };

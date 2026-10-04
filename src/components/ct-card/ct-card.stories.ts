@@ -5,15 +5,38 @@ import './ct-card';
 const meta: Meta = {
   title: 'Components/CtCard',
   component: 'ct-card',
-  render: () => html`
-    <ct-card style="width: 300px;">
-      <h3 style="margin-top: 0;">Resumo Mensal</h3>
-      <p style="color: var(--text-secondary);">Acompanhe seus gastos do mês atual.</p>
+  render: (args) => html`
+    <ct-card style="width: 300px;" ?glass=${args.glass} ?glowingCard=${args.glowingCard}>
+      <h3 style="margin-top: 0; margin-bottom: 8px;">Resumo Mensal</h3>
+      <p style="color: var(--ct-text-secondary, #B3B3B3); margin: 0;">Acompanhe seus gastos do mês atual.</p>
     </ct-card>
   `,
+  argTypes: {
+    glass: { control: 'boolean' },
+    glowingCard: { control: 'boolean' },
+  }
 };
 
 export default meta;
 type Story = StoryObj;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    glass: false,
+    glowingCard: false,
+  }
+};
+
+export const Glassmorphism: Story = {
+  args: {
+    glass: true,
+    glowingCard: false,
+  }
+};
+
+export const GlowingCard: Story = {
+  args: {
+    glass: true,
+    glowingCard: true,
+  }
+};
