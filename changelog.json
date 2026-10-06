@@ -1,6 +1,18 @@
 {
   "en": [
     {
+      "version": "0.6.1",
+      "date": "2026-10-06",
+      "changes": {
+        "Added": [
+          "**Grid System**: Added responsive `lg:col-span-*` utility classes for the 12-column grid system (up to 1024px)."
+        ],
+        "Fixed": [
+          "**Build**: Added explicit `./dist/index.css` export in `package.json` and auto-imported it in `src/index.ts` to ensure global styles and design tokens are properly bundled and resolved for consumers."
+        ]
+      }
+    },
+    {
       "version": "0.6.0",
       "date": "2026-10-05",
       "changes": {
