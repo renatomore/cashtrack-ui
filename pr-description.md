@@ -1,23 +1,20 @@
-# Release v0.5.0: Datepicker Glassmorphism & System UI Polish
+# Feature: Design Tokens & Grid System Standardization 🎨
 
-## Descrição
-Esta versão minor (v0.5.0) traz o novo e robusto Datepicker com estilo Glassmorphism, completo suporte a internacionalização, formatação de máscaras e limites de datas. Além disso, introduzimos um polimento visual importante nos botões, alinhando a profundidade e volumetria de todos eles ao padrão do Design System, além de melhorias de robustez e novas atualizações na documentação do Storybook.
+## Description
+This PR introduces a comprehensive Design Tokens architecture to the CashTrack UI Design System, aimed at drastically improving consistency and developer experience.
 
-## O que foi alterado
-- **ct-datepicker**: Novo componente completo e customizado, suportando as propriedades `format` (DD/MM/YYYY, MM/DD/YYYY, YYYY/MM/DD), `locale`, `min`, e `max`. Conta com navegação intuitiva por dias, meses e anos.
-- **ct-button**: Escurecimento do gradiente da variante primária para alto contraste, e implementação de efeitos de "profundidade" em todos os botões (Secondary, Tonal, Neon, Neumorph e Outline) padronizando o visual 3D Glass.
-- **ct-sidebar**: Ajuste do border-radius dos itens de navegação para 8px.
-- **ct-select**: Getter e setter seguros para a propriedade `options`, que faz o parse dinâmico de JSON previnindo erros ao receber dados nativos.
-- **Storybook**: Atualização geral adicionando histórias para as novas propriedades do Datepicker, controles do Card (`glass`, `glowingCard`) e do Input (`autocomplete`).
-- **Versionamento & Changelog**: Atualizações completas nos arquivos CHANGELOG, preparando a release v0.5.0.
+## Changes Made
+- **Spacing Scale:** Added a Tailwind-like spacing scale (`--ct-spacing-1` to `--ct-spacing-16` / 4px to 64px) with utility classes (`.m-4`, `.p-2`, `.gap-6`, etc.).
+- **Typography Scale:** Refactored `<ct-typography>` to utilize a T-Shirt based sizing scale (`xs` to `4xl`), replacing the old semantic variants (`h1`, `body1`). Added global `.text-xs`, `.font-bold` utility classes.
+- **Grid System:** Replaced the legacy Flexbox-based grid (`.ct-row`, `.ct-col`) with a modern 12-column `display: grid` architecture (`.grid`, `.grid-cols-12`, `.col-span-8`), which eliminates negative margin hacks.
+- **Showcase & i18n:** Added a new "Design Tokens" section to the repository's showcase with interactive documentations for Spacing, Typography, and Grid. Provided translations for both PT and EN locales.
+- **Version Bump:** Bumped version to `0.6.0` and updated changelogs.
 
-## Tipo de PR
-- [x] Nova Funcionalidade (`ct-datepicker` completo com novos fluxos)
-- [x] Estilos/UI (melhoria visual profunda no `ct-button` e `ct-sidebar`)
-- [x] Bugfix (correção no `ct-select`)
-- [x] Docs (atualizações no `storybook` e `changelogs`)
+## Breaking Changes
+- 🚨 **`ct-typography` variant types have changed!** Instead of using `variant="h1"` or `variant="body1"`, you must now use `variant="4xl"` and `variant="base"` respectively.
+- 🚨 The legacy grid classes `.ct-row` and `.ct-col-X` are officially deprecated. Please migrate to `.grid` and `.col-span-X`.
 
-## Checklist
-- [x] Testes unitários passando
-- [x] Build concluído com sucesso
-- [x] Nenhuma alteração incompatível com versões anteriores (non-breaking)
+## Verification
+- [x] Tested with `npm run test` (all 14 specs pass).
+- [x] Verified showcase rendering.
+- [x] Formatted and checked changelogs in both languages.
