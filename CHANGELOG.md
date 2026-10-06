@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2026-10-05
+
+### Added
+- **Design Tokens System**: Implemented a comprehensive Design Tokens system inside `style.css`, including Spacing and Typography scales.
+- **Spacing Scale**: Introduced a 4px-based Tailwind-like spacing scale (`--ct-spacing-1` through `--ct-spacing-16`) and associated utility classes for margin, padding, and gaps (`.m-4`, `.pt-2`, `.gap-6`, etc.).
+- **Typography Scale**: Migrated `ct-typography` and the entire project from semantic HTML tags (`h1`, `body1`) to a T-shirt sizing scale (`4xl`, `3xl`, `base`, `xs`) with respective utility classes.
+- **Modern Grid System**: Replaced the legacy Flexbox row/col grid with a modern 12-column CSS `display: grid` system (`.grid`, `.grid-cols-12`, `.col-span-8`), removing the need for negative margins.
+- **Showcase Updates**: Added a dedicated "Design Tokens" section in the Showcase navigation (Spacing, Typography, Grid System) featuring practical usage guides and interactive examples.
+- **i18n Support**: Added English and Portuguese translation strings for the new Design Tokens showcase pages.
+
 ## [0.5.0] - 2026-10-02
 
 ### Added

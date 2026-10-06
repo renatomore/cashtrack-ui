@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-export type TypographyVariant = 'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'caption';
+export type TypographyVariant = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 export type TypographyColor = 'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error' | 'success';
 
 /**
@@ -9,7 +9,7 @@ export type TypographyColor = 'primary' | 'secondary' | 'textPrimary' | 'textSec
  */
 @customElement('ct-typography')
 export class CtTypography extends LitElement {
-  @property({ type: String }) variant: TypographyVariant = 'body1';
+  @property({ type: String }) variant: TypographyVariant = 'base';
   @property({ type: String }) color: TypographyColor = 'textPrimary';
 
   static styles = css`
@@ -32,41 +32,53 @@ export class CtTypography extends LitElement {
     .color-error { color: var(--ct-color-error, #F44336); }
     .color-success { color: var(--ct-color-success, #4CAF50); }
 
-    /* Variants with Responsive Scaling */
-    .variant-h1 {
-      font-size: clamp(28px, 5vw, 36px);
+    /* Variants with T-Shirt Scaling */
+    .variant-4xl {
+      font-size: var(--ct-text-4xl, 36px);
       font-weight: 700;
-      line-height: 1.2;
+      line-height: var(--ct-line-height-tight, 1.2);
     }
 
-    .variant-h2 {
-      font-size: clamp(22px, 4vw, 28px);
+    .variant-3xl {
+      font-size: var(--ct-text-3xl, 30px);
       font-weight: 600;
-      line-height: 1.3;
+      line-height: var(--ct-line-height-tight, 1.2);
     }
 
-    .variant-h3 {
-      font-size: clamp(18px, 3vw, 22px);
+    .variant-2xl {
+      font-size: var(--ct-text-2xl, 24px);
       font-weight: 600;
-      line-height: 1.4;
+      line-height: var(--ct-line-height-tight, 1.2);
     }
 
-    .variant-body1 {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.5;
+    .variant-xl {
+      font-size: var(--ct-text-xl, 20px);
+      font-weight: 600;
+      line-height: var(--ct-line-height-tight, 1.2);
     }
 
-    .variant-body2 {
-      font-size: 14px;
+    .variant-lg {
+      font-size: var(--ct-text-lg, 18px);
       font-weight: 500;
-      line-height: 1.5;
+      line-height: var(--ct-line-height-normal, 1.5);
     }
 
-    .variant-caption {
-      font-size: 12px;
+    .variant-base {
+      font-size: var(--ct-text-base, 16px);
       font-weight: 400;
-      line-height: 1.4;
+      line-height: var(--ct-line-height-normal, 1.5);
+    }
+
+    .variant-sm {
+      font-size: var(--ct-text-sm, 14px);
+      font-weight: 500;
+      line-height: var(--ct-line-height-normal, 1.5);
+    }
+
+    .variant-xs {
+      font-size: var(--ct-text-xs, 12px);
+      font-weight: 400;
+      line-height: var(--ct-line-height-normal, 1.5);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
@@ -76,9 +88,11 @@ export class CtTypography extends LitElement {
     const classes = `typography variant-${this.variant} color-${this.color}`;
 
     switch (this.variant) {
-      case 'h1': return html`<h1 class="${classes}"><slot></slot></h1>`;
-      case 'h2': return html`<h2 class="${classes}"><slot></slot></h2>`;
-      case 'h3': return html`<h3 class="${classes}"><slot></slot></h3>`;
+      case '4xl':
+      case '3xl': return html`<h1 class="${classes}"><slot></slot></h1>`;
+      case '2xl': return html`<h2 class="${classes}"><slot></slot></h2>`;
+      case 'xl':
+      case 'lg': return html`<h3 class="${classes}"><slot></slot></h3>`;
       default: return html`<p class="${classes}"><slot></slot></p>`;
     }
   }

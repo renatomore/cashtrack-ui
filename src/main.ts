@@ -48,6 +48,10 @@ export class CashtrackShowcase extends LitElement {
       { id: 'home', label: t.home, icon: 'home', active: this.activeRouteId === 'home' },
       { id: 'changelog', label: t.changelog, icon: 'history', active: this.activeRouteId === 'changelog' },
       { id: 'storybook', label: 'Storybook', icon: 'menu_book', href: 'storybook/', external: true },
+      { label: 'Design Tokens', isSeparator: true },
+      { id: 'tokens-spacing', label: 'Spacing', icon: 'space_bar', active: this.activeRouteId === 'tokens-spacing' },
+      { id: 'tokens-typography', label: 'Typography', icon: 'font_download', active: this.activeRouteId === 'tokens-typography' },
+      { id: 'tokens-grid', label: 'Grid System', icon: 'grid_view', active: this.activeRouteId === 'tokens-grid' },
       { label: c.componentsCategory, isSeparator: true },
       { id: 'button', label: t.button, icon: 'smart_button', active: this.activeRouteId === 'button' },
       { id: 'typography', label: t.typography, icon: 'text_fields', active: this.activeRouteId === 'typography' },
@@ -89,7 +93,7 @@ export class CashtrackShowcase extends LitElement {
     const t = translations[this.currentLang].docs;
     return html`
       <ct-card style="margin-top: 24px;">
-        <ct-typography variant="h3" style="margin-bottom: 16px;">${t.propsTitle}</ct-typography>
+        <ct-typography variant="2xl" style="margin-bottom: 16px;">${t.propsTitle}</ct-typography>
         <div style="overflow-x: auto;">
           <table class="props-table">
             <thead>
@@ -122,24 +126,99 @@ export class CashtrackShowcase extends LitElement {
     const s = translations[this.currentLang].sidebar;
 
     switch (this.activeRouteId) {
+        case 'tokens-spacing':
+          return html`
+            <ct-typography variant="4xl">${t.tokensSpacingTitle}</ct-typography>
+            <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+              ${t.tokensSpacingDesc}
+            </ct-typography>
+            <ct-card style="margin-bottom: 24px;">
+              <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.tokensSpacingTableTitle}</ct-typography>
+              <table class="props-table">
+                <thead><tr><th>${t.tokensSpacingTableName}</th><th>${t.tokensSpacingTableSize}</th><th>${t.tokensSpacingTableExample}</th></tr></thead>
+                <tbody>
+                  <tr><td><code>--ct-spacing-1</code></td><td>4px</td><td><code>.m-1, .p-1, .gap-1</code></td></tr>
+                  <tr><td><code>--ct-spacing-2</code></td><td>8px</td><td><code>.m-2, .p-2, .gap-2</code></td></tr>
+                  <tr><td><code>--ct-spacing-3</code></td><td>12px</td><td><code>.m-3, .p-3, .gap-3</code></td></tr>
+                  <tr><td><code>--ct-spacing-4</code></td><td>16px</td><td><code>.m-4, .p-4, .gap-4</code></td></tr>
+                  <tr><td><code>--ct-spacing-6</code></td><td>24px</td><td><code>.m-6, .p-6, .gap-6</code></td></tr>
+                  <tr><td><code>--ct-spacing-8</code></td><td>32px</td><td><code>.m-8, .p-8, .gap-8</code></td></tr>
+                </tbody>
+              </table>
+            </ct-card>
+          `;
+
+        case 'tokens-typography':
+          return html`
+            <ct-typography variant="4xl">${t.tokensTypographyTitle}</ct-typography>
+            <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+              ${t.tokensTypographyDesc}
+            </ct-typography>
+            <ct-card style="margin-bottom: 24px;">
+              <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.tokensTypographySizesTitle}</ct-typography>
+              <div class="grid grid-cols-1 gap-4">
+                <div class="p-4 rounded-xl" style="border: 1px solid var(--ct-border-color)">
+                  <ct-typography variant="4xl">Text 4XL (36px)</ct-typography>
+                  <code>.text-4xl</code> ou <code>variant="4xl"</code>
+                </div>
+                <div class="p-4 rounded-xl" style="border: 1px solid var(--ct-border-color)">
+                  <ct-typography variant="3xl">Text 3XL (30px)</ct-typography>
+                  <code>.text-3xl</code> ou <code>variant="3xl"</code>
+                </div>
+                <div class="p-4 rounded-xl" style="border: 1px solid var(--ct-border-color)">
+                  <ct-typography variant="2xl">Text 2XL (24px)</ct-typography>
+                  <code>.text-2xl</code> ou <code>variant="2xl"</code>
+                </div>
+                <div class="p-4 rounded-xl" style="border: 1px solid var(--ct-border-color)">
+                  <ct-typography variant="base">Text Base (16px) - ${t.tokensTypographyDefaultText}</ct-typography>
+                  <code>.text-base</code> ou <code>variant="base"</code>
+                </div>
+              </div>
+            </ct-card>
+          `;
+
+        case 'tokens-grid':
+          return html`
+            <ct-typography variant="4xl">${t.tokensGridTitle}</ct-typography>
+            <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+              ${t.tokensGridDesc}
+            </ct-typography>
+            <ct-card style="margin-bottom: 24px;">
+              <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.tokensGridExampleTitle}</ct-typography>
+              <div class="grid grid-cols-12 gap-4">
+                <div class="col-span-12 md:col-span-8 p-4 rounded text-center" style="background: var(--ct-surface); border: 1px solid var(--ct-border-color);">.col-span-8</div>
+                <div class="col-span-12 md:col-span-4 p-4 rounded text-center" style="background: var(--ct-surface); border: 1px solid var(--ct-border-color);">.col-span-4</div>
+                <div class="col-span-4 p-4 rounded text-center" style="background: var(--ct-surface); border: 1px solid var(--ct-border-color);">.col-span-4</div>
+                <div class="col-span-4 p-4 rounded text-center" style="background: var(--ct-surface); border: 1px solid var(--ct-border-color);">.col-span-4</div>
+                <div class="col-span-4 p-4 rounded text-center" style="background: var(--ct-surface); border: 1px solid var(--ct-border-color);">.col-span-4</div>
+              </div>
+            </ct-card>
+            <ct-card>
+              <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.tokensGridCodeTitle}</ct-typography>
+              <pre class="code-block"><code>&lt;div class="grid grid-cols-12 gap-4"&gt;
+  &lt;div class="col-span-12 md:col-span-8"&gt;8 Colunas&lt;/div&gt;
+  &lt;div class="col-span-12 md:col-span-4"&gt;4 Colunas&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </ct-card>
+          `;
       case 'home':
         return html`
-          <ct-typography variant="h1" style="color: var(--ct-color-primary);">${t.homeTitle}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.6;">
+          <ct-typography variant="4xl" style="color: var(--ct-color-primary);">${t.homeTitle}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px; font-size: 1.1rem; line-height: 1.6;">
             ${t.homeDesc}
           </ct-typography>
           
           <ct-card style="margin-bottom: 24px;">
-            <ct-typography variant="h2" style="margin-bottom: 16px;">${t.homeInstall}</ct-typography>
-            <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 16px;">
+            <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.homeInstall}</ct-typography>
+            <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 16px;">
               ${t.homeInstallDesc}
             </ct-typography>
             <pre class="code-block" style="margin: 0;"><code>npm install cashtrack-ui</code></pre>
           </ct-card>
 
           <ct-card>
-            <ct-typography variant="h2" style="margin-bottom: 16px;">${t.homeUsage}</ct-typography>
-            <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 16px;">
+            <ct-typography variant="3xl" style="margin-bottom: 16px;">${t.homeUsage}</ct-typography>
+            <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 16px;">
               ${t.homeUsageDesc}
             </ct-typography>
             <pre class="code-block" style="margin: 0;"><code>import 'cashtrack-ui';
@@ -151,12 +230,12 @@ export class CashtrackShowcase extends LitElement {
 
       case 'button':
         return html`
-          <ct-typography variant="h1">${s.button}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.button}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.buttonDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
-            <ct-typography variant="h3" style="margin-bottom: 16px;">${c.availableVariants}</ct-typography>
+            <ct-typography variant="2xl" style="margin-bottom: 16px;">${c.availableVariants}</ct-typography>
             
             <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
               <ct-button variant="primary">Primary</ct-button>
@@ -178,20 +257,20 @@ export class CashtrackShowcase extends LitElement {
 
       case 'typography':
         return html`
-          <ct-typography variant="h1">${s.typography}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.typography}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.typographyDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
             <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
-              <ct-typography variant="h1">Heading 1 (2.5rem)</ct-typography>
-              <ct-typography variant="h2">Heading 2 (2rem)</ct-typography>
-              <ct-typography variant="h3">Heading 3 (1.75rem)</ct-typography>
-              <ct-typography variant="body1">Body 1 (1rem) - Default text element</ct-typography>
-              <ct-typography variant="caption">Caption (0.875rem)</ct-typography>
+              <ct-typography variant="4xl">Heading 1 (2.5rem)</ct-typography>
+              <ct-typography variant="3xl">Heading 2 (2rem)</ct-typography>
+              <ct-typography variant="2xl">Heading 3 (1.75rem)</ct-typography>
+              <ct-typography variant="base">Body 1 (1rem) - Default text element</ct-typography>
+              <ct-typography variant="xs">Caption (0.875rem)</ct-typography>
             </div>
-            <pre class="code-block"><code>&lt;ct-typography variant="h1"&gt;Heading 1&lt;/ct-typography&gt;
-&lt;ct-typography variant="body1" color="var(--ct-color-primary)"&gt;Custom Color&lt;/ct-typography&gt;</code></pre>
+            <pre class="code-block"><code>&lt;ct-typography variant="4xl"&gt;Heading 1&lt;/ct-typography&gt;
+&lt;ct-typography variant="base" color="var(--ct-color-primary)"&gt;Custom Color&lt;/ct-typography&gt;</code></pre>
           </ct-card>
 
           ${this._renderPropsTable([
@@ -202,23 +281,23 @@ export class CashtrackShowcase extends LitElement {
 
       case 'card':
         return html`
-          <ct-typography variant="h1">${s.card}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.card}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.cardDesc}
           </ct-typography>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
             <ct-card>
-              <ct-typography variant="h3">Standard Card</ct-typography>
-              <ct-typography variant="body1" color="var(--ct-text-secondary)">${t.cardStandardBody}</ct-typography>
+              <ct-typography variant="2xl">Standard Card</ct-typography>
+              <ct-typography variant="base" color="var(--ct-text-secondary)">${t.cardStandardBody}</ct-typography>
             </ct-card>
             <ct-card glowingCard="true">
-              <ct-typography variant="h3" class="text-gold">Glowing Card</ct-typography>
-              <ct-typography variant="body1" color="var(--ct-text-secondary)">${t.cardGlowBody}</ct-typography>
+              <ct-typography variant="2xl" class="text-gold">Glowing Card</ct-typography>
+              <ct-typography variant="base" color="var(--ct-text-secondary)">${t.cardGlowBody}</ct-typography>
             </ct-card>
           </div>
           <ct-card>
             <pre class="code-block"><code>&lt;ct-card&gt;
-  &lt;ct-typography variant="h3"&gt;Title&lt;/ct-typography&gt;
+  &lt;ct-typography variant="2xl"&gt;Title&lt;/ct-typography&gt;
 &lt;/ct-card&gt;</code></pre>
           </ct-card>
 
@@ -230,8 +309,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'input':
         return html`
-          <ct-typography variant="h1">${s.input}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.input}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.inputDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -256,8 +335,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'select':
         return html`
-          <ct-typography variant="h1">${s.select}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.select}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.selectDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -284,8 +363,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'datepicker':
         return html`
-          <ct-typography variant="h1">${s.datepicker}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.datepicker}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.datepickerDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -311,8 +390,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'modal':
         return html`
-          <ct-typography variant="h1">${s.modal}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.modal}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.modalDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -325,7 +404,7 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
           <ct-modal ?open="${this.isModalOpen}" @ct-close="${() => this.isModalOpen = false}">
             <span slot="title">${t.modalTitle}</span>
-            <ct-typography variant="body1">${t.modalBody}</ct-typography>
+            <ct-typography variant="base">${t.modalBody}</ct-typography>
             <ct-button slot="footer" variant="outline" @click="${() => this.isModalOpen = false}">${t.modalClose}</ct-button>
           </ct-modal>
 
@@ -337,8 +416,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'drawer':
         return html`
-          <ct-typography variant="h1">${s.drawer}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.drawer}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.drawerDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -348,8 +427,8 @@ export class CashtrackShowcase extends LitElement {
 &lt;/ct-drawer&gt;</code></pre>
           </ct-card>
           <ct-drawer ?open="${this.isDrawerOpen}" position="right" @ct-close="${() => this.isDrawerOpen = false}">
-            <ct-typography variant="h2">${t.drawerTitle}</ct-typography>
-            <ct-typography variant="body1">${t.drawerBody}</ct-typography>
+            <ct-typography variant="3xl">${t.drawerTitle}</ct-typography>
+            <ct-typography variant="base">${t.drawerBody}</ct-typography>
           </ct-drawer>
 
           ${this._renderPropsTable([
@@ -360,8 +439,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'alert':
         return html`
-          <ct-typography variant="h1">${s.alert}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.alert}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.alertDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -385,8 +464,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'transaction':
         return html`
-          <ct-typography variant="h1">${s.transaction}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.transaction}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.transactionDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -415,8 +494,8 @@ export class CashtrackShowcase extends LitElement {
 
       case 'badge':
         return html`
-          <ct-typography variant="h1">${s.badge}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.badge}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${t.badgeDesc}
           </ct-typography>
           <ct-card style="margin-bottom: 24px;">
@@ -439,16 +518,16 @@ export class CashtrackShowcase extends LitElement {
         const langKey = this.currentLang === 'pt' ? 'pt-BR' : 'en';
         const changes = this.changelogData ? this.changelogData[langKey] : [];
         return html`
-          <ct-typography variant="h1">${s.changelog}</ct-typography>
-          <ct-typography variant="body1" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
+          <ct-typography variant="4xl">${s.changelog}</ct-typography>
+          <ct-typography variant="base" color="var(--ct-text-secondary)" style="margin-bottom: 32px;">
             ${this.currentLang === 'pt' ? 'Histórico de versões e alterações do Design System.' : 'Version history and changes of the Design System.'}
           </ct-typography>
-          ${!this.changelogData ? html`<ct-typography variant="body1">Carregando...</ct-typography>` : ''}
+          ${!this.changelogData ? html`<ct-typography variant="base">Carregando...</ct-typography>` : ''}
           ${changes.map((release: any) => html`
             <ct-card style="margin-bottom: 24px;">
-              <ct-typography variant="h2" style="margin-bottom: 8px;">v${release.version} <span style="font-size: 14px; color: var(--ct-text-secondary); font-weight: normal;">${release.date ? `- ${release.date}` : ''}</span></ct-typography>
+              <ct-typography variant="3xl" style="margin-bottom: 8px;">v${release.version} <span style="font-size: 14px; color: var(--ct-text-secondary); font-weight: normal;">${release.date ? `- ${release.date}` : ''}</span></ct-typography>
               ${Object.entries(release.changes).map(([category, items]: [string, any]) => html`
-                <ct-typography variant="h3" style="margin-top: 16px; margin-bottom: 8px; color: var(--ct-color-primary); font-size: 1.1rem;">${category}</ct-typography>
+                <ct-typography variant="2xl" style="margin-top: 16px; margin-bottom: 8px; color: var(--ct-color-primary); font-size: 1.1rem;">${category}</ct-typography>
                 <ul style="color: var(--ct-text-primary); margin: 0; padding-left: 20px; line-height: 1.6;">
                   ${(items as string[]).map((item: string) => html`<li>${item}</li>`)}
                 </ul>
@@ -458,7 +537,7 @@ export class CashtrackShowcase extends LitElement {
         `;
 
       default:
-        return html`<ct-typography variant="h2">${c.selectComponent}</ct-typography>`;
+        return html`<ct-typography variant="3xl">${c.selectComponent}</ct-typography>`;
     }
   }
 

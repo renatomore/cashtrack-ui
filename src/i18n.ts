@@ -15,12 +15,15 @@ export const translations = {
       alert: 'Alert',
       transaction: 'Transaction Item',
       badge: 'Badge',
-      changelog: 'Changelog'
+      changelog: 'Changelog',
+      spacing: 'Spacing',
+      gridSystem: 'Grid System'
     },
     common: {
       availableVariants: 'Variantes Disponíveis',
       selectComponent: 'Selecione um componente',
-      componentsCategory: 'Componentes'
+      componentsCategory: 'Componentes',
+      designTokens: 'Design Tokens'
     },
     docs: {
       homeTitle: 'Bem-vindo ao CashTrack UI',
@@ -68,7 +71,21 @@ export const translations = {
       propName: 'Prop',
       propType: 'Tipo',
       propDefault: 'Padrão',
-      propDesc: 'Descrição'
+      propDesc: 'Descrição',
+      tokensSpacingTitle: 'Espaçamento (Spacing)',
+      tokensSpacingDesc: 'A escala de espaçamento segue um sistema de múltiplos de 4px, similar ao Tailwind.',
+      tokensSpacingTableTitle: 'Tokens & Classes',
+      tokensSpacingTableName: 'Nome',
+      tokensSpacingTableSize: 'Tamanho',
+      tokensSpacingTableExample: 'Exemplo (Margin/Padding/Gap)',
+      tokensTypographyTitle: 'Tipografia (Typography Tokens)',
+      tokensTypographyDesc: 'Escala de tamanhos de fonte baseada em tamanhos T-Shirt.',
+      tokensTypographySizesTitle: 'Tamanhos Disponíveis',
+      tokensTypographyDefaultText: 'Padrão para corpo de texto',
+      tokensGridTitle: 'Sistema de Grid (Grid System)',
+      tokensGridDesc: 'Sistema de Grid moderno usando <code style="padding: 2px 4px; background: rgba(0,0,0,0.1); border-radius: 4px;">display: grid</code> com 12 colunas, dispensando margens negativas.',
+      tokensGridExampleTitle: 'Exemplo de Grid de 12 Colunas',
+      tokensGridCodeTitle: 'Código'
     }
   },
   en: {
@@ -90,7 +107,8 @@ export const translations = {
     common: {
       availableVariants: 'Available Variants',
       selectComponent: 'Select a component',
-      componentsCategory: 'Components'
+      componentsCategory: 'Components',
+      designTokens: 'Design Tokens'
     },
     docs: {
       homeTitle: 'Welcome to CashTrack UI',
@@ -138,7 +156,21 @@ export const translations = {
       propName: 'Prop',
       propType: 'Type',
       propDefault: 'Default',
-      propDesc: 'Description'
+      propDesc: 'Description',
+      tokensSpacingTitle: 'Spacing',
+      tokensSpacingDesc: 'The spacing scale follows a 4px multiplier system, similar to Tailwind.',
+      tokensSpacingTableTitle: 'Tokens & Classes',
+      tokensSpacingTableName: 'Name',
+      tokensSpacingTableSize: 'Size',
+      tokensSpacingTableExample: 'Example (Margin/Padding/Gap)',
+      tokensTypographyTitle: 'Typography Tokens',
+      tokensTypographyDesc: 'Font size scale based on T-Shirt sizing.',
+      tokensTypographySizesTitle: 'Available Sizes',
+      tokensTypographyDefaultText: 'Default body text',
+      tokensGridTitle: 'Grid System',
+      tokensGridDesc: 'Modern Grid system using <code style="padding: 2px 4px; background: rgba(0,0,0,0.1); border-radius: 4px;">display: grid</code> with 12 columns, removing the need for negative margins.',
+      tokensGridExampleTitle: '12-Column Grid Example',
+      tokensGridCodeTitle: 'Code'
     }
   }
 };
