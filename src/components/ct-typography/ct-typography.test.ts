@@ -16,13 +16,13 @@ describe('ct-typography', () => {
   });
 
   it('renders h2 variant', async () => {
-    const el = await fixture<CtTypography>(html`<ct-typography variant="3xl"></ct-typography>`);
+    const el = await fixture<CtTypography>(html`<ct-typography variant="2xl"></ct-typography>`);
     const h2 = el.shadowRoot!.querySelector('h2');
     expect(h2).toBeTruthy();
   });
 
   it('renders h3 variant', async () => {
-    const el = await fixture<CtTypography>(html`<ct-typography variant="2xl"></ct-typography>`);
+    const el = await fixture<CtTypography>(html`<ct-typography variant="xl"></ct-typography>`);
     const h3 = el.shadowRoot!.querySelector('h3');
     expect(h3).toBeTruthy();
   });
