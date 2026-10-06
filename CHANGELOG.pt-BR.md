@@ -5,6 +5,16 @@ Todas as alterações notáveis a este projeto serão documentadas neste arquivo
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] - 2026-10-05
+
+### Adicionado
+- **Design Tokens System**: Implementado um sistema global de Design Tokens no `style.css`, incluindo escalas de Espaçamento e Tipografia.
+- **Escala de Espaçamento**: Introduzida uma escala de espaçamento baseada em múltiplos de 4px (estilo Tailwind: `--ct-spacing-1` a `--ct-spacing-16`) e respectivas classes utilitárias para margens, paddings e gaps (`.m-4`, `.pt-2`, `.gap-6`, etc.).
+- **Escala de Tipografia**: O componente `ct-typography` e todo o projeto foram migrados de tags HTML semânticas (`h1`, `body1`) para um sistema de tamanhos estilo T-shirt (`4xl`, `3xl`, `base`, `xs`) com classes utilitárias.
+- **Modern Grid System**: O grid legado de Flexbox (linhas/colunas) foi substituído por um sistema de 12 colunas usando `display: grid` moderno (`.grid`, `.grid-cols-12`, `.col-span-8`), removendo a necessidade de margens negativas.
+- **Showcase Atualizado**: Adicionada uma seção dedicada "Design Tokens" na navegação do Showcase contendo documentação para Spacing, Typography e Grid System.
+- **Traduções**: Suporte a internacionalização (i18n) PT/EN adicionado para as novas páginas de documentação de Design Tokens.
+
 ## [0.5.0] - 2026-10-02
 
 ### Adicionado
