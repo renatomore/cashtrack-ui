@@ -134,6 +134,18 @@
   ],
   "pt-BR": [
     {
+      "version": "0.6.1",
+      "date": "2026-10-06",
+      "changes": {
+        "Adicionado": [
+          "**Sistema de Grid**: Adicionadas classes utilitárias responsivas `lg:col-span-*` para o sistema de grid de 12 colunas (até 1024px)."
+        ],
+        "Corrigido": [
+          "**Build**: Adicionada a exportação explícita de `./dist/index.css` no `package.json` e auto-import no `src/index.ts` para garantir que estilos globais e design tokens sejam envelopados e resolvidos adequadamente."
+        ]
+      }
+    },
+    {
       "version": "0.6.0",
       "date": "2026-10-05",
       "changes": {

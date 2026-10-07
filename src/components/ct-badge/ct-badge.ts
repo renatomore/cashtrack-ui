@@ -48,9 +48,9 @@ export class CtBadge extends LitElement {
     }
 
     .variant-info {
-      background: rgba(0, 229, 255, 0.15);
-      color: #00E5FF;
-      border: 1px solid rgba(0, 229, 255, 0.3);
+      background: rgba(156, 133, 85, 0.15);
+      color: #9c8555;
+      border: 1px solid rgba(156, 133, 85, 0.3);
     }
 
     .variant-default {
