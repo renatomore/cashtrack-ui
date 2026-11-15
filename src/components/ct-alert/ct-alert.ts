@@ -80,7 +80,7 @@ export class CtAlert extends LitElement {
     }
 
     .variant-info {
-      border-left-color: var(--ct-color-primary, #00E5FF);
+      border-left-color: var(--ct-color-primary, #9c8555);
     }
 
     .close-btn {

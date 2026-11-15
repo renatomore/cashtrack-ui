@@ -30,8 +30,8 @@ const meta: Meta = {
     <style>
       /* Injetando tokens temporários para o Storybook */
       :root {
-        --ct-color-primary: #00E5FF;
-        --ct-color-primary-hover: #00B8D4;
+        --ct-color-primary: #9c8555;
+        --ct-color-primary-hover: #8a754b;
         --ct-color-secondary: #FFD700;
         --ct-font-family: 'Montserrat', sans-serif;
         --ct-radius-md: 8px;

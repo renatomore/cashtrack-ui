@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.2] - 2026-10-06
+
+### Changed
+- **Theme**: Updated primary color palette to gold (`#9c8555`) with neutral dark gray surfaces.
+
+### Fixed
+- **Showcase Navigation**: Differentiated typography tokens and component links in the sidebar menu with ID-based routing.
+- **Docs**: Restored missing accents across Portuguese documentation and changelogs.
+
 ## [0.6.1] - 2026-10-06
 
 ### Added

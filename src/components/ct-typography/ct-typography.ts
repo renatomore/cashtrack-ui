@@ -25,7 +25,7 @@ export class CtTypography extends LitElement {
     }
 
     /* Colors */
-    .color-primary { color: var(--ct-color-primary, #00E5FF); }
+    .color-primary { color: var(--ct-color-primary, #9c8555); }
     .color-secondary { color: var(--ct-color-secondary, #FFD700); }
     .color-textPrimary { color: var(--ct-text-primary, #FFFFFF); }
     .color-textSecondary { color: var(--ct-text-secondary, #B3B3B3); }

@@ -16,8 +16,9 @@ export const translations = {
       transaction: 'Transaction Item',
       badge: 'Badge',
       changelog: 'Changelog',
-      spacing: 'Spacing',
-      gridSystem: 'Grid System'
+      tokensSpacing: 'Espaçamento',
+      tokensTypography: 'Tokens de Tipografia',
+      tokensGrid: 'Sistema de Grid'
     },
     common: {
       availableVariants: 'Variantes Disponíveis',
@@ -102,7 +103,10 @@ export const translations = {
       alert: 'Alert',
       transaction: 'Transaction Item',
       badge: 'Badge',
-      changelog: 'Changelog'
+      changelog: 'Changelog',
+      tokensSpacing: 'Spacing',
+      tokensTypography: 'Typography Tokens',
+      tokensGrid: 'Grid System'
     },
     common: {
       availableVariants: 'Available Variants',

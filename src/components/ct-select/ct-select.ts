@@ -71,8 +71,8 @@ export class CtSelect extends LitElement {
     }
 
     .select-container.open {
-      border-color: var(--ct-color-primary, #00E5FF);
-      box-shadow: 0 0 0 1px var(--ct-color-primary, #00E5FF), 0 0 8px rgba(0, 229, 255, 0.2);
+      border-color: var(--ct-color-primary, #9c8555);
+      box-shadow: 0 0 0 1px var(--ct-color-primary, #9c8555), 0 0 8px rgba(156, 133, 85, 0.2);
     }
 
     .select-container.error {
@@ -112,7 +112,7 @@ export class CtSelect extends LitElement {
     .select-container.open .label,
     .select-container.has-value .label {
       transform: translateY(-10px) scale(0.75);
-      color: var(--ct-color-primary, #00E5FF);
+      color: var(--ct-color-primary, #9c8555);
     }
 
     .select-container:not(.open).has-value .label {
@@ -128,7 +128,7 @@ export class CtSelect extends LitElement {
 
     .select-container.open .chevron {
       transform: rotate(180deg);
-      color: var(--ct-color-primary, #00E5FF);
+      color: var(--ct-color-primary, #9c8555);
     }
 
     /* Dropdown Menu */

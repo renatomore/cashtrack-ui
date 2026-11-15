@@ -62,21 +62,21 @@ export class CtButton extends LitElement {
 
     /* Variants */
     .variant-primary {
-      background: linear-gradient(180deg, #0093A8 0%, #006073 100%);
+      background: linear-gradient(180deg, #8a754b 0%, #6e5d3c 100%);
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(0, 147, 168, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(138, 117, 75, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .variant-primary:hover:not(:disabled) {
-      background: linear-gradient(180deg, #00A4BB 0%, #00738A 100%);
-      box-shadow: 0 6px 16px rgba(0, 147, 168, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      background: linear-gradient(180deg, #b09968 0%, #8c774c 100%);
+      box-shadow: 0 6px 16px rgba(138, 117, 75, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
       transform: translateY(-1px);
     }
 
     .variant-primary:active:not(:disabled) {
       transform: translateY(1px);
-      box-shadow: 0 2px 4px rgba(0, 147, 168, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 4px rgba(138, 117, 75, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     /* Secondary Variant (Pure Glassmorphism) */
@@ -101,13 +101,13 @@ export class CtButton extends LitElement {
 
     /* Tonal Variant (Muted Primary Glass) */
     .variant-tonal {
-      background: linear-gradient(180deg, rgba(0, 229, 255, 0.2) 0%, rgba(0, 229, 255, 0.08) 100%);
-      color: var(--ct-color-primary, #00E5FF);
-      border: 1px solid rgba(0, 229, 255, 0.1);
+      background: linear-gradient(180deg, rgba(156, 133, 85, 0.2) 0%, rgba(156, 133, 85, 0.08) 100%);
+      color: var(--ct-color-primary, #9c8555);
+      border: 1px solid rgba(156, 133, 85, 0.1);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
     }
     .variant-tonal:hover:not(:disabled) {
-      background: linear-gradient(180deg, rgba(0, 229, 255, 0.3) 0%, rgba(0, 229, 255, 0.12) 100%);
+      background: linear-gradient(180deg, rgba(156, 133, 85, 0.3) 0%, rgba(156, 133, 85, 0.12) 100%);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       transform: translateY(-1px);
     }
@@ -118,20 +118,20 @@ export class CtButton extends LitElement {
 
     /* Neon Variant (Cyber Neon Glow) */
     .variant-neon {
-      background: linear-gradient(180deg, rgba(0, 229, 255, 0.05) 0%, transparent 100%);
-      color: var(--ct-color-primary, #00E5FF);
-      border: 1px solid var(--ct-color-primary, #00E5FF);
-      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2), inset 0 0 10px rgba(0, 229, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-      text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+      background: linear-gradient(180deg, rgba(156, 133, 85, 0.05) 0%, transparent 100%);
+      color: var(--ct-color-primary, #9c8555);
+      border: 1px solid var(--ct-color-primary, #9c8555);
+      box-shadow: 0 0 10px rgba(156, 133, 85, 0.2), inset 0 0 10px rgba(156, 133, 85, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      text-shadow: 0 0 8px rgba(156, 133, 85, 0.5);
     }
     .variant-neon:hover:not(:disabled) {
-      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      background: linear-gradient(180deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 229, 255, 0.02) 100%);
+      box-shadow: 0 0 20px rgba(156, 133, 85, 0.4), inset 0 0 15px rgba(156, 133, 85, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      background: linear-gradient(180deg, rgba(156, 133, 85, 0.1) 0%, rgba(156, 133, 85, 0.02) 100%);
       transform: translateY(-1px);
     }
     .variant-neon:active:not(:disabled) {
       transform: translateY(1px);
-      box-shadow: 0 0 5px rgba(0, 229, 255, 0.3), inset 0 0 8px rgba(0, 229, 255, 0.4);
+      box-shadow: 0 0 5px rgba(156, 133, 85, 0.3), inset 0 0 8px rgba(156, 133, 85, 0.4);
     }
 
     /* Neumorph Variant (Dark Neumorphism) */

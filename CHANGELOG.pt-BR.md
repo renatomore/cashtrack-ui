@@ -5,6 +5,23 @@ Todas as alterações notáveis a este projeto serão documentadas neste arquivo
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [0.6.2] - 2026-10-06
+
+### Alterado
+- **Tema**: Atualizada a paleta de cor primária para dourado moeda (`#9c8555`) e superfícies em cinza neutro.
+
+### Corrigido
+- **Navegação do Showcase**: Diferenciado o item de tokens de tipografia do componente Typography no menu lateral, com resolução de rota baseada em ID.
+- **Documentação**: Restaurada a acentuação correta nos arquivos de documentação e changelogs em português.
+
+## [0.6.1] - 2026-10-06
+
+### Adicionado
+- **Sistema de Grid**: Adicionadas classes utilitárias responsivas `lg:col-span-*` para o sistema de grid de 12 colunas (até 1024px).
+
+### Corrigido
+- **Build**: Adicionada a exportação explícita de `./dist/index.css` no `package.json` e auto-import no `src/index.ts` para garantir que estilos globais e design tokens sejam envelopados e resolvidos adequadamente.
+
 ## [0.6.0] - 2026-10-05
 
 ### Adicionado

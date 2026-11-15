@@ -1,6 +1,6 @@
 :root {
   /* Base Colors (Brand - Finora style) */
-  --ct-color-primary: #17D9C3;
+  --ct-color-primary: #9c8555;
   /* Vibrant teal/cyan */
   --ct-color-success: #34D399;
   /* Soft neon green */
@@ -10,11 +10,11 @@
   /* Golden yellow */
 
   /* Theme Variables (Default: Dark) */
-  --ct-surface: rgba(27, 33, 36, 0.6);
+  --ct-surface: rgba(30, 30, 30, 0.6);
   /* Glassy dark teal-grey */
   --ct-surface-blur: blur(24px);
   /* Glass blur amount */
-  --ct-background: #0D1315;
+  --ct-background: #121212;
   /* Very dark teal-grey */
   --ct-border-color: rgba(255, 255, 255, 0.06);
   /* Subtle glass borders */
@@ -37,7 +37,7 @@
 /* Light Theme Variables */
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --ct-color-primary: #00B8D4;
+    --ct-color-primary: #8a754b;
     /* Darker cyan for better contrast */
     --ct-color-success: #388E3C;
     --ct-color-error: #D32F2F;
@@ -59,7 +59,7 @@
 }
 
 :root[data-theme="light"] {
-  --ct-color-primary: #00B8D4;
+  --ct-color-primary: #8a754b;
   --ct-color-success: #388E3C;
   --ct-color-error: #D32F2F;
   --ct-color-warning: #F57C00;

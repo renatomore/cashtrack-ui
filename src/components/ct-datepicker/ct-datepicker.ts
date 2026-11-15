@@ -62,8 +62,8 @@ export class CtDatepicker extends LitElement {
     }
 
     .input-container.focused, .input-container.open {
-      border-color: var(--ct-color-primary, #00E5FF);
-      box-shadow: 0 0 0 1px var(--ct-color-primary, #00E5FF), 0 0 8px rgba(0, 229, 255, 0.2);
+      border-color: var(--ct-color-primary, #9c8555);
+      box-shadow: 0 0 0 1px var(--ct-color-primary, #9c8555), 0 0 8px rgba(156, 133, 85, 0.2);
     }
 
     .input-container.error {
@@ -124,7 +124,7 @@ export class CtDatepicker extends LitElement {
     .input-container.open .label,
     .input-container.has-value .label {
       transform: translateY(-10px) scale(0.75);
-      color: var(--ct-color-primary, #00E5FF);
+      color: var(--ct-color-primary, #9c8555);
     }
 
     .input-container.error .label {

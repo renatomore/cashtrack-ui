@@ -48,10 +48,10 @@ export class CashtrackShowcase extends LitElement {
       { id: 'home', label: t.home, icon: 'home', active: this.activeRouteId === 'home' },
       { id: 'changelog', label: t.changelog, icon: 'history', active: this.activeRouteId === 'changelog' },
       { id: 'storybook', label: 'Storybook', icon: 'menu_book', href: 'storybook/', external: true },
-      { label: 'Design Tokens', isSeparator: true },
-      { id: 'tokens-spacing', label: 'Spacing', icon: 'space_bar', active: this.activeRouteId === 'tokens-spacing' },
-      { id: 'tokens-typography', label: 'Typography', icon: 'font_download', active: this.activeRouteId === 'tokens-typography' },
-      { id: 'tokens-grid', label: 'Grid System', icon: 'grid_view', active: this.activeRouteId === 'tokens-grid' },
+      { label: c.designTokens, isSeparator: true },
+      { id: 'tokens-spacing', label: t.tokensSpacing, icon: 'space_bar', active: this.activeRouteId === 'tokens-spacing' },
+      { id: 'tokens-typography', label: t.tokensTypography, icon: 'font_download', active: this.activeRouteId === 'tokens-typography' },
+      { id: 'tokens-grid', label: t.tokensGrid, icon: 'grid_view', active: this.activeRouteId === 'tokens-grid' },
       { label: c.componentsCategory, isSeparator: true },
       { id: 'button', label: t.button, icon: 'smart_button', active: this.activeRouteId === 'button' },
       { id: 'typography', label: t.typography, icon: 'text_fields', active: this.activeRouteId === 'typography' },
@@ -68,7 +68,7 @@ export class CashtrackShowcase extends LitElement {
   }
 
   private _handleNavigation(e: CustomEvent) {
-    const item = this.sidebarItems.find(i => i.label === e.detail.label);
+    const item = this.sidebarItems.find(i => i.id === e.detail?.id) || this.sidebarItems.find(i => i.label === e.detail?.label);
     if (item?.id) {
       this.activeRouteId = item.id;
     }
@@ -274,7 +274,7 @@ export class CashtrackShowcase extends LitElement {
           </ct-card>
 
           ${this._renderPropsTable([
-          { name: 'variant', type: "'h1' | 'h2' | 'h3' | 'body1' | 'body2' | 'caption'", defaultVal: "'body1'", desc: 'The typography scale and HTML element to use.' },
+          { name: 'variant', type: "'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl'", defaultVal: "'base'", desc: 'The typography scale and HTML element to use.' },
           { name: 'color', type: "'primary' | 'secondary' | 'textPrimary' | 'textSecondary' | 'error' | 'success'", defaultVal: "'textPrimary'", desc: 'Semantic color to apply to the text.' }
         ])}
         `;
