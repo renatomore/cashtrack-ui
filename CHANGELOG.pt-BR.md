@@ -10,8 +10,12 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 ### Adicionado
 - **Sistema de Grid**: Adicionadas classes utilitárias responsivas `lg:col-span-*` para o sistema de grid de 12 colunas (até 1024px).
 
+### Alterado
+- **Tema**: Atualizada a paleta de cor primária para dourado moeda (`#9c8555`) e superfícies em cinza neutro.
+
 ### Corrigido
 - **Build**: Adicionada a exportação explícita de `./dist/index.css` no `package.json` e auto-import no `src/index.ts` para garantir que estilos globais e design tokens sejam envelopados e resolvidos adequadamente.
+- **Navegação do Showcase**: Diferenciado o item de tokens de tipografia do componente Typography no menu lateral, com resolução de rota baseada em ID.
 
 ## [0.6.0] - 2026-10-05
 

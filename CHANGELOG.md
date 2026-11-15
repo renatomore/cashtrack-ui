@@ -10,8 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **Grid System**: Added responsive `lg:col-span-*` utility classes for the 12-column grid system (up to 1024px).
 
+### Changed
+- **Theme**: Updated primary color palette to gold (`#9c8555`) with neutral dark gray surfaces.
+
 ### Fixed
 - **Build**: Added explicit `./dist/index.css` export in `package.json` and auto-imported it in `src/index.ts` to ensure global styles and design tokens are properly bundled and resolved for consumers.
+- **Showcase Navigation**: Differentiated typography tokens and component links in the sidebar menu with ID-based routing.
 
 ## [0.6.0] - 2026-10-05
 
