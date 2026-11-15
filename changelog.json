@@ -1,18 +1,27 @@
 {
   "en": [
     {
+      "version": "0.6.2",
+      "date": "2026-10-06",
+      "changes": {
+        "Changed": [
+          "**Theme**: Updated primary color palette to gold (`#9c8555`) with neutral dark gray surfaces."
+        ],
+        "Fixed": [
+          "**Showcase Navigation**: Differentiated typography tokens and component links in the sidebar menu with ID-based routing.",
+          "**Docs**: Restored missing accents across Portuguese documentation and changelogs."
+        ]
+      }
+    },
+    {
       "version": "0.6.1",
       "date": "2026-10-06",
       "changes": {
         "Added": [
           "**Grid System**: Added responsive `lg:col-span-*` utility classes for the 12-column grid system (up to 1024px)."
         ],
-        "Changed": [
-          "**Theme**: Updated primary color palette to gold (`#9c8555`) with neutral dark gray surfaces."
-        ],
         "Fixed": [
-          "**Build**: Added explicit `./dist/index.css` export in `package.json` and auto-imported it in `src/index.ts` to ensure global styles and design tokens are properly bundled and resolved for consumers.",
-          "**Showcase Navigation**: Differentiated typography tokens and component links in the sidebar menu with ID-based routing."
+          "**Build**: Added explicit `./dist/index.css` export in `package.json` and auto-imported it in `src/index.ts` to ensure global styles and design tokens are properly bundled and resolved for consumers."
         ]
       }
     },
@@ -138,18 +147,27 @@
   ],
   "pt-BR": [
     {
+      "version": "0.6.2",
+      "date": "2026-10-06",
+      "changes": {
+        "Alterado": [
+          "**Tema**: Atualizada a paleta de cor primária para dourado moeda (`#9c8555`) e superfícies em cinza neutro."
+        ],
+        "Corrigido": [
+          "**Navegação do Showcase**: Diferenciado o item de tokens de tipografia do componente Typography no menu lateral, com resolução de rota baseada em ID.",
+          "**Documentação**: Restaurada a acentuação correta nos arquivos de documentação e changelogs em português."
+        ]
+      }
+    },
+    {
       "version": "0.6.1",
       "date": "2026-10-06",
       "changes": {
         "Adicionado": [
           "**Sistema de Grid**: Adicionadas classes utilitárias responsivas `lg:col-span-*` para o sistema de grid de 12 colunas (até 1024px)."
         ],
-        "Alterado": [
-          "**Tema**: Atualizada a paleta de cor primária para dourado moeda (`#9c8555`) e superfícies em cinza neutro."
-        ],
         "Corrigido": [
-          "**Build**: Adicionada a exportação explícita de `./dist/index.css` no `package.json` e auto-import no `src/index.ts` para garantir que estilos globais e design tokens sejam envelopados e resolvidos adequadamente.",
-          "**Navegação do Showcase**: Diferenciado o item de tokens de tipografia do componente Typography no menu lateral, com resolução de rota baseada em ID."
+          "**Build**: Adicionada a exportação explícita de `./dist/index.css` no `package.json` e auto-import no `src/index.ts` para garantir que estilos globais e design tokens sejam envelopados e resolvidos adequadamente."
         ]
       }
     },

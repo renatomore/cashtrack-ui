@@ -1,29 +1,27 @@
-# PR: Classes Responsivas no Grid, Exportação de CSS e Ajustes de Tema Dourado
+# PR: Refinamento de Tema Dourado e Navegação do Showcase (v0.6.2)
 
 ## Descrição
-Este Pull Request introduz melhorias e correções na versão 0.6.1 do CashTrack UI. As alterações incluem novas classes utilitárias responsivas (`lg:col-span-*`) no sistema de grid, exportação e importação automáticas do arquivo de estilos globais `style.css` no pacote distribuído, redefinição da paleta de cores primárias para o tom dourado moeda (`#9c8555`) sobre superfícies neutras, e ajustes de navegação e tipografia no showcase.
+Este Pull Request introduz melhorias visuais e correções na versão 0.6.2 do CashTrack UI. As alterações compreendem o reajuste da paleta de cores primárias para um tom de dourado fosco (`#9c8555`) estilo moeda sobre superfícies em cinza neutro, a resolução de conflitos de navegação no menu lateral do showcase (diferenciando os tokens de tipografia do componente `ct-typography`), a restauração da acentuação nos changelogs e a atualização da tabela de propriedades com a escala T-Shirt.
 
 ---
 
 ## Features (Novas Funcionalidades)
 
-### 📱 Sistema de Grid
-- **Classes Responsivas `lg:col-span-*`**: Adicionada media query para telas até 1024px no `src/style.css`, expandindo o controle responsivo do grid de 12 colunas para layouts intermediários.
-
 ### 🎨 Tema e Design System
-- **Paleta Dourado Moeda**: Atualização global das variáveis e gradientes de destaque para o dourado `#9c8555`, combinando com superfícies em cinza escuro neutro (`#121212`).
+- **Paleta Dourado Moeda**: Redefinição das variáveis de cor primária, sombras de neon e gradientes para a cor `#9c8555`, conferindo um visual sofisticado e metálico ao design system.
+- **Superfícies Neutras**: Ajuste das superfícies e fundos escuros para cinza neutro (`#121212`), aumentando o contraste com o dourado.
 
 ---
 
 ## Fixes (Correções)
 
-### 📦 Build e Distribuição
-- **Exportação Automática de CSS**: Inclusão de `./dist/index.css` no campo `exports` do `package.json` e auto-import em `src/index.ts`, garantindo que estilos e tokens globais sejam incluídos automaticamente em aplicações consumidoras.
-
 ### 🧭 Showcase e Navegação
-- **Diferenciação no Menu Lateral**: Renomeação do item em Design Tokens para `Tokens de Tipografia` mantendo `Typography` em Componentes no `src/i18n.ts` e `src/main.ts`.
-- **Roteamento por ID**: Ajuste no evento de navegação da `src/main.ts` para resolver rotas preferencialmente por `id` em vez de rótulo, evitando conflitos entre páginas homônimas.
-- **Tipagem na Tabela de Props**: Atualizada a propriedade `variant` de `ct-typography` na documentação para refletir a escala T-Shirt (`xs` a `4xl`).
+- **Diferenciação no Menu Lateral**: Renomeação do item em Design Tokens para `Tokens de Tipografia` (em inglês: `Typography Tokens`) mantendo `Typography` em Componentes no `src/i18n.ts` e `src/main.ts`.
+- **Roteamento Seguro por ID**: O manipulador de navegação agora busca itens primariamente por `id`, evitando ambiguidades e colisões entre rotas homônimas.
+- **Tipos de Variantes na Documentação**: Atualização da documentação da propriedade `variant` de `ct-typography` para a escala T-Shirt (`xs` a `4xl`).
+
+### 📝 Documentação e Acentuação
+- **Codificação UTF-8**: Correção de caracteres especiais e acentos nos arquivos de changelog em português (`CHANGELOG.pt-BR.md`).
 
 ---
 
